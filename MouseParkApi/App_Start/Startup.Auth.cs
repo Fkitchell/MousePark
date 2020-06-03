@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using MouseParkApi.Providers;
 using MouseParkApi.Models;
+using MousePark.Data;
 
 namespace MouseParkApi
 {
