@@ -5,6 +5,12 @@ VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseParkApi", "MouseParkApi\MouseParkApi.csproj", "{65E84A54-B9D1-46AD-B676-259513524DDD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MousePark.Data", "MousePark.Data\MousePark.Data.csproj", "{95A1BBC2-B0DE-4A78-9B68-6B397BA73592}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MousePark.Models", "MousePark.Models\MousePark.Models.csproj", "{C69F972C-297F-49E3-8539-4347436F62DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MousePark.Services", "MousePark.Services\MousePark.Services.csproj", "{F74A4494-6E6A-4F85-854D-25D1ACBA7D8B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{65E84A54-B9D1-46AD-B676-259513524DDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65E84A54-B9D1-46AD-B676-259513524DDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65E84A54-B9D1-46AD-B676-259513524DDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95A1BBC2-B0DE-4A78-9B68-6B397BA73592}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95A1BBC2-B0DE-4A78-9B68-6B397BA73592}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95A1BBC2-B0DE-4A78-9B68-6B397BA73592}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95A1BBC2-B0DE-4A78-9B68-6B397BA73592}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C69F972C-297F-49E3-8539-4347436F62DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C69F972C-297F-49E3-8539-4347436F62DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C69F972C-297F-49E3-8539-4347436F62DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C69F972C-297F-49E3-8539-4347436F62DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F74A4494-6E6A-4F85-854D-25D1ACBA7D8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F74A4494-6E6A-4F85-854D-25D1ACBA7D8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F74A4494-6E6A-4F85-854D-25D1ACBA7D8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F74A4494-6E6A-4F85-854D-25D1ACBA7D8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
