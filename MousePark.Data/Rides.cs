@@ -21,7 +21,7 @@ namespace MousePark.Data
         [Display(Name = "Description of Ride")]
         public string RideDescription { get; set; }
         [Required]
-        [Display(Name = "Minimum Height to Ride")]
+        [Display(Name = "Minimum Height to Ride (Inches)")]
 
         public int HeightReq { get; set; }
         [Required]
