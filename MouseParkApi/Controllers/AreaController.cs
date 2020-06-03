@@ -50,5 +50,13 @@ namespace MouseParkApi.Controllers
                 return InternalServerError();
             return Ok();
         }
+        public IHttpActionResult Delete(int areaId)
+        {
+            var service = CreateAreaService();
+
+            if (!service.DeleteArea(areaId))
+                return InternalServerError();
+            return Ok();
+        }
     }
 }
