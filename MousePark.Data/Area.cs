@@ -20,8 +20,8 @@ namespace MousePark.Data
 
         [ForeignKey("ParkId")]
         [Required]
-        public Park? ParkId { get; set; }
-       // public virtual Park ParkId { get; set; }
-       // public int ParkId { get; set; }
+        public Park ParkId { get; set; }
+       public virtual Park Park { get; set; }
+      
     }
 }
