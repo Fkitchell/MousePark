@@ -213,7 +213,6 @@
     </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
@@ -306,6 +305,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MousePark.Data\MousePark.Data.csproj">
+      <Project>{95a1bbc2-b0de-4a78-9b68-6b397ba73592}</Project>
+      <Name>MousePark.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MousePark.Models\MousePark.Models.csproj">
+      <Project>{c69f972c-297f-49e3-8539-4347436f62dd}</Project>
+      <Name>MousePark.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MousePark.Services\MousePark.Services.csproj">
+      <Project>{f74a4494-6e6a-4f85-854d-25d1acba7d8b}</Project>
+      <Name>MousePark.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
