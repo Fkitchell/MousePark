@@ -61,7 +61,15 @@
     <Compile Include="AreaDetail.cs" />
     <Compile Include="AreaEdit.cs" />
     <Compile Include="AreaListItem.cs" />
+    <Compile Include="ParkCreate.cs" />
+    <Compile Include="ParkDelete.cs" />
+    <Compile Include="ParkEdit.cs" />
+    <Compile Include="ParkListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RideCreate.cs" />
+    <Compile Include="RideDetail.cs" />
+    <Compile Include="RideEdit.cs" />
+    <Compile Include="RideListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -5,17 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MousePark.Data
+namespace MousePark.Models
 {
-    public class Park
+    public class ParkListItem
     {
-        [Key]
         public int ParkId { get; set; }
-        [Required]
-        [Display(Name = "Name of Park")]
-        public string  ParkName { get; set; }
-        [Required]
-        [Display(Name = "Admission Price")]
+        public string ParkName { get; set; }
         public double AdmissionPrice { get; set; }
     }
 }
