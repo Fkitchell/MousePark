@@ -61,6 +61,10 @@
     <Compile Include="AreaDetail.cs" />
     <Compile Include="AreaEdit.cs" />
     <Compile Include="AreaListItem.cs" />
+    <Compile Include="EateryCreate.cs" />
+    <Compile Include="EateryDetail.cs" />
+    <Compile Include="EateryEdit.cs" />
+    <Compile Include="EateryListItem.cs" />
     <Compile Include="ParkCreate.cs" />
     <Compile Include="ParkEdit.cs" />
     <Compile Include="ParkListItem.cs" />
