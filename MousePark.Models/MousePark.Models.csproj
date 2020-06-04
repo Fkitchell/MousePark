@@ -73,6 +73,10 @@
     <Compile Include="RideDetail.cs" />
     <Compile Include="RideEdit.cs" />
     <Compile Include="RideListItem.cs" />
+    <Compile Include="ShowCreate.cs" />
+    <Compile Include="ShowDetail.cs" />
+    <Compile Include="ShowEdit.cs" />
+    <Compile Include="ShowListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
