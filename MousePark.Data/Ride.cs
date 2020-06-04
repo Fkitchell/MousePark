@@ -13,7 +13,7 @@ namespace MousePark.Data
     public class Ride
     {
         [Key]
-        public Guid RideId { get; set; }
+        public int RideId { get; set; }
         [Required]
         [Display(Name = "Name of Ride")]
         public string RideName { get; set; }

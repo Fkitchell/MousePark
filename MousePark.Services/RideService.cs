@@ -10,18 +10,18 @@ namespace MousePark.Services
 {
     public class RideService
     {
-        private readonly Guid _rideID;
-        public RideService(Guid rideID)
-        {
-            _rideID = rideID;
-        }
+        //private readonly int _rideId;
+        //public RideService(int rideId)
+        //{
+        //    _rideId = rideId;
+        //}
 
         public bool CreateRide(RideCreate model)
         {
             var entity =
                 new Ride()
                 {
-                    RideId = _rideID,
+                    //RideId = _rideId,
                     RideName = model.RideName,
                     RideDescription = model.RideDescription,
                     RideType = model.RideType
@@ -39,19 +39,19 @@ namespace MousePark.Services
                 var query =
                     ctx
                     .Rides
-                    .Where(e => e.RideId == _rideID)
+                    //.Where(e => e.RideId == _rideId)
                     .Select(
                         e =>
                         new RideListItem
                         {
-                            RideID = e.RideId,
+                            RideId = e.RideId,
                             RideName = e.RideName,
                         }
                     );
                 return query.ToArray();
             }
         }
-        public RideDetail GetRideByID(Guid id)
+        public RideDetail GetRideByID(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -85,14 +85,14 @@ namespace MousePark.Services
             }
 
         }
-        public bool DeleteRide(Guid RideID)
+        public bool DeleteRide(int RideId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                     .Rides
-                    .Single(e => e.RideId == RideID);
+                    .Single(e => e.RideId == RideId);
 
                 ctx.Rides.Remove(entity);
 
