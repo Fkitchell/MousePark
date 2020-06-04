@@ -14,5 +14,6 @@ namespace MousePark.Models
         [MaxLength(100, ErrorMessage = "There are too many characters in this field.")]
         [Display(Name = "Area Name")]
         public string AreaName { get; set; }
+        public int ParkId { get; set; }
     }
 }
