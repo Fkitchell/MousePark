@@ -37,7 +37,7 @@ namespace MousePark.Data
         public DbSet<Area> Areas { get; set; }
         public DbSet<Ride> Rides { get; set; }
         //public DbSet<Show> Shows { get; set; }
-        //public DbSet<Eatery> Eateries { get; set; }
+       public DbSet<Eatery> Eateries { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
