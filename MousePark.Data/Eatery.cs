@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MousePark.Data
 {
-    public enum PriceTier {/*"$", "$$", "$$$", "$$$$"*/}
+    public enum PriceTier {Lowest = 1, MidLow, Middle, MidHigh, High}
     public class Eatery
     {
         [Key]
