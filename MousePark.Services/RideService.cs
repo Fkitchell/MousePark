@@ -24,7 +24,9 @@ namespace MousePark.Services
                     //RideId = _rideId,
                     RideName = model.RideName,
                     RideDescription = model.RideDescription,
-                    RideType = model.RideType
+                    HeightReq = model.HeightReq,
+                    RideType = model.RideType,
+                    AreaId = model.AreaId
                 };
             using (var ctx = new ApplicationDbContext())
             {
