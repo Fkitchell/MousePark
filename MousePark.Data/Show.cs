@@ -18,7 +18,7 @@ namespace MousePark.Data
         [Required]
         public TargetAge TargetAge { get; set; }
         [Required]
-        public int AudienceCapacity { get; set; }
+        public int Capacity { get; set; }
         [Required]
         public int RunTime { get; set; }
         [ForeignKey("Area")]
