@@ -16,7 +16,8 @@ namespace MousePark.Services
             var food =
                 new Eatery()
                 {
-                    EateryName = model.EateryName
+                    EateryName = model.EateryName,
+                    AreaId = model.AreaId
                 };
             using (var fd = new ApplicationDbContext())
             {
@@ -36,6 +37,7 @@ namespace MousePark.Services
                    {
                        EateryId = f.EateryId,
                        EateryName = f.EateryName,
+                       AreaId = f.AreaId
                    }
                    );
                 return query.ToArray();
@@ -52,6 +54,7 @@ namespace MousePark.Services
                     {
                         EateryId = food.EateryId,
                         EateryName = food.EateryName,
+                        AreaId = food.AreaId
                     };
             }
         }
@@ -64,6 +67,7 @@ namespace MousePark.Services
                     .Eateries
                     .Single(f => f.EateryId == model.EateryId);
                 food.EateryName = model.EateryName;
+                food.AreaId = model.AreaId;
 
                 return fd.SaveChanges() == 1;
             }

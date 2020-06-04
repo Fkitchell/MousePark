@@ -25,5 +25,6 @@ namespace MousePark.Models
         [Required]
         [Description("Price Tier")]
         public PriceTier Tier { get; set; }
+        public int AreaId { get; set; }
     }
 }
