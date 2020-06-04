@@ -62,7 +62,6 @@
     <Compile Include="AreaEdit.cs" />
     <Compile Include="AreaListItem.cs" />
     <Compile Include="ParkCreate.cs" />
-    <Compile Include="ParkDelete.cs" />
     <Compile Include="ParkEdit.cs" />
     <Compile Include="ParkListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

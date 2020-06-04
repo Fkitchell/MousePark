@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 namespace MousePark.Data
 {
     public enum RideType {[Description("Roller Coaster")] RollerCoaster, Water, Gentle, Thrill, Transportation, Kiddie }
-    public class Rides
+    public class Ride
     {
         [Key]
-        public Guid RideID { get; set; }
+        public Guid RideId { get; set; }
         [Required]
         [Display(Name = "Name of Ride")]
         public string RideName { get; set; }

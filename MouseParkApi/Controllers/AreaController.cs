@@ -10,15 +10,16 @@ using System.Web.Http;
 
 namespace MouseParkApi.Controllers
 {
-    [Authorize]
+    [Authorize] //You have to be signed in to hit this point at all. You cannot get to the methods below at all if you're not signed in. Sign-in is still required.
     public class AreaController : ApiController
     {
         private AreaService CreateAreaService()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var areaService = new AreaService(userId);
+            //var userId = Guid.Parse(User.Identity.GetUserId()); //We took out the user id from the creation of the AreaService
+            var areaService = new AreaService(); //took out userId parameter
             return areaService;
         }
+        [AllowAnonymous]
         public IHttpActionResult Get()
         {
             AreaService areaService = CreateAreaService();

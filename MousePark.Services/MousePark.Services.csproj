@@ -57,10 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-
     <Compile Include="AreaService.cs" />
-    <Compile Include="AreaCreate.cs" />
-    <Compile Include="AreaListItem.cs" />
     <Compile Include="ParkService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RideService.cs" />
