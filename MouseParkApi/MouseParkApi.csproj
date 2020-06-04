@@ -215,6 +215,7 @@
     <Compile Include="Controllers\AreaController.cs" />
     <Compile Include="Controllers\EateryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RideController.cs" />
     <Compile Include="Controllers\ParkController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
