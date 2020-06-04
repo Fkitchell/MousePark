@@ -17,6 +17,7 @@ namespace MouseParkApi.Controllers
             ShowService showService = new ShowService();
             return showService;
         }
+        [AllowAnonymous]
         public IHttpActionResult Get()
         {
             ShowService showService = CreateShowService();
@@ -32,6 +33,7 @@ namespace MouseParkApi.Controllers
                 return InternalServerError();
             return Ok();
         }
+        [AllowAnonymous]
         public IHttpActionResult Get(int id)
         {
             ShowService showService = CreateShowService();
