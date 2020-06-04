@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MousePark.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,5 +11,6 @@ namespace MousePark.Models
     {
         public int RideId { get; set; }
         public string RideName { get; set; }
+        public RideType RideType { get; set; }
     }
 }
