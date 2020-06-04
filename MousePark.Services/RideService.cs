@@ -21,7 +21,6 @@ namespace MousePark.Services
             var entity =
                 new Ride()
                 {
-                    //RideId = _rideId,
                     RideName = model.RideName,
                     RideDescription = model.RideDescription,
                     HeightReq = model.HeightReq,
@@ -41,13 +40,13 @@ namespace MousePark.Services
                 var query =
                     ctx
                     .Rides
-                    //.Where(e => e.RideId == _rideId)
                     .Select(
                         e =>
                         new RideListItem
                         {
                             RideId = e.RideId,
                             RideName = e.RideName,
+                            RideType = e.RideType,
                         }
                     );
                 return query.ToArray();
@@ -66,7 +65,9 @@ namespace MousePark.Services
                     {
                         RideName = entity.RideName,
                         RideDescription = entity.RideDescription,
-                        RideType = entity.RideType
+                        HeightReq = entity.HeightReq,
+                        RideType = entity.RideType,
+                        AreaId = entity.AreaId
                     };
             }
         }
@@ -82,6 +83,8 @@ namespace MousePark.Services
                 entity.RideName = model.RideName;
                 entity.RideDescription = model.RideDescription;
                 entity.HeightReq = model.HeightReq;
+                entity.RideType = model.RideType;
+                entity.AreaId = model.AreaId;
 
                 return ctx.SaveChanges() == 1;
             }

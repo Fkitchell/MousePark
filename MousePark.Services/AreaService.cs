@@ -20,7 +20,8 @@ namespace MousePark.Services
             var location =
                 new Area()
                 {
-                    AreaName = model.AreaName
+                    AreaName = model.AreaName,
+                    ParkId = model.ParkId
                 };
             using (var loc = new ApplicationDbContext())
             {
@@ -40,6 +41,7 @@ namespace MousePark.Services
                    {
                        AreaId = l.AreaId,
                        AreaName = l.AreaName,
+                       ParkId = l.ParkId
                    }
                    );
                 return query.ToArray();
@@ -56,6 +58,7 @@ namespace MousePark.Services
                     {
                         AreaId = location.AreaId,
                         AreaName = location.AreaName,
+                        ParkId = location.ParkId
                     };
             }
         }
@@ -68,6 +71,7 @@ namespace MousePark.Services
                     .Areas
                     .Single(l => l.AreaId == model.AreaId);
                 location.AreaName = model.AreaName;
+                location.ParkId = model.ParkId;
 
                 return loc.SaveChanges() == 1;
             }
