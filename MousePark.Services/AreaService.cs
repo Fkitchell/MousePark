@@ -79,7 +79,7 @@ namespace MousePark.Services
                 var location =
                     loc
                     .Areas
-                    .Single(l => l.AreaId == AreaId);//&& l.UserId == _userId);
+                    .Single(l => l.AreaId == AreaId);
                 loc.Areas.Remove(location);
                 return loc.SaveChanges() == 1;
             }
