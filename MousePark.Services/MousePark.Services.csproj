@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AreaService.cs" />
+    <Compile Include="EateryService.cs" />
     <Compile Include="ParkService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RideService.cs" />

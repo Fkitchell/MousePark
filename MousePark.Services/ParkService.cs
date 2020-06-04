@@ -12,10 +12,10 @@ namespace MousePark.Services
     {
         private readonly Guid _userId;
 
-        public ParkService(Guid userId)
-        {
-            _userId = userId;
-        }
+        //public ParkService(Guid userId)
+        //{
+        //    _userId = userId;
+        //}
         public bool CreatePark(ParkCreate model)
         {
             var entity = new Park()
