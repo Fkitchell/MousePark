@@ -17,6 +17,9 @@ namespace MousePark.Services
                 new Eatery()
                 {
                     EateryName = model.EateryName,
+                    CuisineType = model.CuisineType,
+                    DineIn = model.DineIn,
+                    Tier = model.Tier,
                     AreaId = model.AreaId
                 };
             using (var fd = new ApplicationDbContext())
