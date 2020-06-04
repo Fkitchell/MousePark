@@ -19,9 +19,9 @@ namespace MousePark.Services
         public bool CreateRide(RideCreate model)
         {
             var entity =
-                new Rides()
+                new Ride()
                 {
-                    RideID = _rideID,
+                    RideId = _rideID,
                     RideName = model.RideName,
                     RideDescription = model.RideDescription,
                     RideType = model.RideType
@@ -39,12 +39,12 @@ namespace MousePark.Services
                 var query =
                     ctx
                     .Rides
-                    .Where(e => e.RideID == _rideID)
+                    .Where(e => e.RideId == _rideID)
                     .Select(
                         e =>
                         new RideListItem
                         {
-                            RideID = e.RideID,
+                            RideID = e.RideId,
                             RideName = e.RideName,
                         }
                     );
@@ -58,7 +58,7 @@ namespace MousePark.Services
                 var entity =
                     ctx
                     .Rides
-                    .Single(e => e.RideID == id);
+                    .Single(e => e.RideId == id);
                     return
                     new RideDetail
                     {
@@ -92,7 +92,7 @@ namespace MousePark.Services
                 var entity =
                     ctx
                     .Rides
-                    .Single(e => e.RideID == RideID);
+                    .Single(e => e.RideId == RideID);
 
                 ctx.Rides.Remove(entity);
 

@@ -10,11 +10,11 @@ namespace MousePark.Services
 {
     public class AreaService
     {
-        private readonly Guid _userId;
-        public AreaService(Guid userId)
-        {
-            _userId = userId;
-        }
+        //private readonly Guid _userId;
+        //public AreaService(Guid userId) //pass in member variable and store it until it's needed
+        //{
+        //    _userId = userId;
+        //}                                  Commenting out these lines makes it so that I do not need a userId to create an AreaService.
         public bool CreateArea(AreaCreate model)
         {
             var location =
