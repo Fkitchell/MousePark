@@ -78,7 +78,7 @@ namespace MousePark.Services
                 var entity =
                     ctx
                     .Rides
-                    .Single(e => e.RideName == model.RideName);
+                    .Single(e => e.RideId == model.RideId);
 
                 entity.RideName = model.RideName;
                 entity.RideDescription = model.RideDescription;
