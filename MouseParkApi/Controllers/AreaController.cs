@@ -35,6 +35,7 @@ namespace MouseParkApi.Controllers
                 return InternalServerError();
             return Ok();
         }
+        [AllowAnonymous]
         public IHttpActionResult Get(int areaId)
         {
             AreaService areaService = CreateAreaService();
