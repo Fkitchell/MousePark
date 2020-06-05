@@ -90,13 +90,9 @@
     <Compile Include="Area.cs" />
     <Compile Include="Eatery.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202006041417325_InitialCreate.cs" />
-    <Compile Include="Migrations\202006041417325_InitialCreate.designer.cs">
-      <DependentUpon>202006041417325_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006041456389_InitialMigration.cs" />
-    <Compile Include="Migrations\202006041456389_InitialMigration.designer.cs">
-      <DependentUpon>202006041456389_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\202006051336229_AddShows.cs" />
+    <Compile Include="Migrations\202006051336229_AddShows.designer.cs">
+      <DependentUpon>202006051336229_AddShows.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Park.cs" />
@@ -113,11 +109,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202006041417325_InitialCreate.resx">
-      <DependentUpon>202006041417325_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006041456389_InitialMigration.resx">
-      <DependentUpon>202006041456389_InitialMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006051336229_AddShows.resx">
+      <DependentUpon>202006051336229_AddShows.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

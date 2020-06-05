@@ -10,7 +10,6 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "MousePark.Data.ApplicationDbContext";
         }
 
         protected override void Seed(MousePark.Data.ApplicationDbContext context)

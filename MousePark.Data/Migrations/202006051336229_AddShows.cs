@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class AddShows : DbMigration
     {
         public override void Up()
         {
@@ -28,6 +28,21 @@
                         AdmissionPrice = c.Double(nullable: false),
                     })
                 .PrimaryKey(t => t.ParkId);
+            
+            CreateTable(
+                "dbo.Eatery",
+                c => new
+                    {
+                        EateryId = c.Int(nullable: false, identity: true),
+                        EateryName = c.String(nullable: false, maxLength: 100),
+                        CuisineType = c.String(nullable: false),
+                        DineIn = c.Boolean(nullable: false),
+                        Tier = c.Int(nullable: false),
+                        AreaId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.EateryId)
+                .ForeignKey("dbo.Area", t => t.AreaId, cascadeDelete: true)
+                .Index(t => t.AreaId);
             
             CreateTable(
                 "dbo.Ride",
@@ -67,6 +82,21 @@
                 .ForeignKey("dbo.ApplicationUser", t => t.ApplicationUser_Id)
                 .Index(t => t.IdentityRole_Id)
                 .Index(t => t.ApplicationUser_Id);
+            
+            CreateTable(
+                "dbo.Show",
+                c => new
+                    {
+                        ShowId = c.Int(nullable: false, identity: true),
+                        ShowName = c.String(nullable: false),
+                        TargetAge = c.Int(nullable: false),
+                        Capacity = c.Int(nullable: false),
+                        RunTime = c.Int(nullable: false),
+                        AreaId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.ShowId)
+                .ForeignKey("dbo.Area", t => t.AreaId, cascadeDelete: true)
+                .Index(t => t.AreaId);
             
             CreateTable(
                 "dbo.ApplicationUser",
@@ -121,21 +151,27 @@
             DropForeignKey("dbo.IdentityUserRole", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
+            DropForeignKey("dbo.Show", "AreaId", "dbo.Area");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
             DropForeignKey("dbo.Ride", "AreaId", "dbo.Area");
+            DropForeignKey("dbo.Eatery", "AreaId", "dbo.Area");
             DropForeignKey("dbo.Area", "ParkId", "dbo.Park");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
+            DropIndex("dbo.Show", new[] { "AreaId" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
             DropIndex("dbo.Ride", new[] { "AreaId" });
+            DropIndex("dbo.Eatery", new[] { "AreaId" });
             DropIndex("dbo.Area", new[] { "ParkId" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
+            DropTable("dbo.Show");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
             DropTable("dbo.Ride");
+            DropTable("dbo.Eatery");
             DropTable("dbo.Park");
             DropTable("dbo.Area");
         }
