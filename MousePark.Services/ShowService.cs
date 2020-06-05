@@ -3,6 +3,7 @@ using MousePark.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Core.Objects.DataClasses;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
@@ -17,16 +18,27 @@ namespace MousePark.Services
             Show show = new Show
             {
                 ShowName = model.ShowName,
-                TargetAge = model.TargetAge,
+                TargetAge = ToEnum(model.TargetAge),
                 Capacity = model.Capacity,
                 RunTime = model.RunTime,
                 AreaId = model.AreaId
             };
+            if (show.TargetAge == TargetAge.None)
+                return false;
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Shows.Add(show);
                 return ctx.SaveChanges() == 1;
             }
+        }
+        public TargetAge ToEnum(string targetAge)
+        {
+            TargetAge parsedTargetAge;
+            if (Enum.TryParse<TargetAge>(targetAge, true, out parsedTargetAge))
+            {
+                return parsedTargetAge;
+            }
+            return TargetAge.None;
         }
         public IEnumerable<ShowListItem> GetShows()
         {
@@ -66,7 +78,8 @@ namespace MousePark.Services
                     TargetAge = show.TargetAge,
                     Capacity = show.Capacity,
                     RunTime = show.RunTime,
-                    AreaId = show.AreaId
+                    AreaName = show.Area.AreaName
+                    //AreaId = show.AreaId
                 };
             }
         }

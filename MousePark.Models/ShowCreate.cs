@@ -12,7 +12,7 @@ namespace MousePark.Models
     {
         [Required]
         public string ShowName { get; set; }
-        public TargetAge TargetAge { get; set; }
+        public string TargetAge { get; set; }
         public int Capacity { get; set; }
         public int RunTime { get; set; }
         [Required]
