@@ -37,6 +37,7 @@ namespace MouseParkApi.Controllers
 
             return Ok();
         }
+        [AllowAnonymous]
         public IHttpActionResult Get(int id)
         {
             RideService rideService = CreateRideService();
