@@ -62,12 +62,12 @@ namespace MousePark.Services
                 return query.ToArray();
             }
         }
-        public EateryDetail GetEateryById(int areaId)
+        public EateryDetail GetEateryById(int id)
         {
             using (var fd = new ApplicationDbContext())
             {
                 var food =
-                    fd.Eateries.Single(f => f.EateryId == areaId);
+                    fd.Eateries.Single(f => f.EateryId == id);
                 return
                     new EateryDetail
                     {
@@ -91,14 +91,14 @@ namespace MousePark.Services
                 return fd.SaveChanges() == 1;
             }
         }
-        public bool DeleteEatery(int EateryId)
+        public bool DeleteEatery(int id)
         {
             using (var fd = new ApplicationDbContext())
             {
                 var food =
                     fd
                     .Eateries
-                    .Single(f => f.EateryId == EateryId);
+                    .Single(f => f.EateryId == id);
                 fd.Eateries.Remove(food);
                 return fd.SaveChanges() == 1;
             }
