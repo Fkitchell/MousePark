@@ -78,14 +78,14 @@ namespace MousePark.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        public bool DeletePark(int parkId)
+        public bool DeletePark(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                     .Parks
-                    .Single(e => e.ParkId == parkId);
+                    .Single(e => e.ParkId == id);
 
                 ctx.Parks.Remove(entity);
                 return ctx.SaveChanges() == 1;

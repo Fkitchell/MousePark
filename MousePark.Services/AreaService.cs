@@ -47,12 +47,12 @@ namespace MousePark.Services
                 return query.ToArray();
             }
         }
-        public AreaDetail GetAreaById(int areaId)
+        public AreaDetail GetAreaById(int id)
         {
             using (var loc = new ApplicationDbContext())
             {
                 var location =
-                    loc.Areas.Single(l => l.AreaId == areaId);
+                    loc.Areas.Single(l => l.AreaId == id);
                 return
                     new AreaDetail
                     {
@@ -76,14 +76,14 @@ namespace MousePark.Services
                 return loc.SaveChanges() == 1;
             }
         }
-        public bool DeleteArea(int AreaId)
+        public bool DeleteArea(int id)
         {
             using (var loc = new ApplicationDbContext())
             {
                 var location =
                     loc
                     .Areas
-                    .Single(l => l.AreaId == AreaId);
+                    .Single(l => l.AreaId == id);
 
                 loc.Areas.Remove(location);
                 return loc.SaveChanges() == 1;
