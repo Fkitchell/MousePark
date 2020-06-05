@@ -10,7 +10,7 @@ namespace MousePark.Services
 {
     public class ParkService
     {
-        private readonly Guid _userId;
+        //private readonly Guid _userId;
 
         //public ParkService(Guid userId)
         //{
