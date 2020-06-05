@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,7 +10,8 @@ using System.Threading.Tasks;
 
 namespace MousePark.Data
 {
-    public enum TargetAge { Child, Teen, Adult, All }
+    [JsonConverter(typeof(StringEnumConverter))]
+    public enum TargetAge { None, Child, Teen, Adult, All }
     public class Show
     {
         [Key]

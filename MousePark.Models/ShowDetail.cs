@@ -19,6 +19,7 @@ namespace MousePark.Models
         [Display(Name = "Run Time (Minutes)")]
         public int RunTime { get; set; }
         [Display(Name = "Area")]
-        public int AreaId { get; set; }
+        //public int AreaId { get; set; }
+        public string AreaName { get; set; }
     }
 }

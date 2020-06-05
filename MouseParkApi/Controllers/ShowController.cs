@@ -2,6 +2,7 @@
 using MousePark.Services;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -58,6 +59,7 @@ namespace MouseParkApi.Controllers
             //bool b = service.DeleteShow(id);
             //if (!b)
             //return InternalServerError();
+            //above is shorthand for below
             if (!service.DeleteShow(id)) //
                 return InternalServerError();
 
