@@ -21,7 +21,7 @@ namespace MousePark.Services
             //var entity =
                 Ride ride = new Ride
                 {
-                    RideName = model.RideName,
+                    RideName = model.Name,
                     RideDescription = model.RideDescription,
                     HeightReq = model.HeightReq,
                     RideType = model.RideType,
@@ -55,8 +55,8 @@ namespace MousePark.Services
                         e =>
                         new RideListItem
                         {
-                            RideId = e.RideId,
-                            RideName = e.RideName,
+                            ID = e.RideId,
+                            Name = e.RideName,
                             RideType = e.RideType,
                         }
                     );
@@ -74,7 +74,7 @@ namespace MousePark.Services
                     return
                     new RideDetail
                     {
-                        RideName = entity.RideName,
+                        Name = entity.RideName,
                         RideDescription = entity.RideDescription,
                         HeightReq = entity.HeightReq,
                         RideType = entity.RideType,
@@ -94,8 +94,8 @@ namespace MousePark.Services
                     {
                         items.Add(new RideListItem
                         {
-                            RideId = e.RideId,
-                            RideName = e.RideName,
+                            ID = e.RideId,
+                            Name = e.RideName,
                             RideType = e.RideType
                         });
                     }
@@ -110,9 +110,9 @@ namespace MousePark.Services
                 var entity =
                     ctx
                     .Rides
-                    .Single(e => e.RideId == model.RideId);
+                    .Single(e => e.RideId == model.ID);
 
-                entity.RideName = model.RideName;
+                entity.RideName = model.Name;
                 entity.RideDescription = model.RideDescription;
                 entity.HeightReq = model.HeightReq;
                 entity.RideType = model.RideType;

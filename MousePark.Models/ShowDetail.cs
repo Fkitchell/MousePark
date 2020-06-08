@@ -10,9 +10,9 @@ namespace MousePark.Models
 {
     public class ShowDetail
     {
-        public int ShowId { get; set; }
+        public int ID { get; set; }
         [Display(Name ="Show Name")]
-        public string ShowName { get; set; }
+        public string Name { get; set; }
         [Display(Name ="Target Age Group")]
         public TargetAge TargetAge { get; set; }
         public int Capacity { get; set; }

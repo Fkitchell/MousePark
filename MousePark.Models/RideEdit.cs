@@ -9,8 +9,8 @@ namespace MousePark.Models
 {
     public class RideEdit
     {
-        public int RideId { get; set; }
-        public string RideName { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; }
         public string RideDescription { get; set; }
         public int HeightReq { get; set; }
         public RideType RideType { get; set; }

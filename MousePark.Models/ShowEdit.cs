@@ -9,8 +9,8 @@ namespace MousePark.Models
 {
     public class ShowEdit
     {
-        public int ShowId { get; set; }
-        public string ShowName { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; }
         public TargetAge TargetAge { get; set; }
         public int Capacity { get; set; }
         public int RunTime { get; set; }

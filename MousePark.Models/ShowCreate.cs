@@ -11,7 +11,7 @@ namespace MousePark.Models
     public class ShowCreate
     {
         [Required]
-        public string ShowName { get; set; }
+        public string Name { get; set; }
         public string TargetAge { get; set; }
         public int Capacity { get; set; }
         public int RunTime { get; set; }

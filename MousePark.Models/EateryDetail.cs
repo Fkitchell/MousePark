@@ -10,8 +10,8 @@ namespace MousePark.Models
 {
     public class EateryDetail
     {
-        public int EateryId { get; set; }
-        public string EateryName { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; }
         public string CuisineType { get; set; }
         [Description("Dine-In Y / N")]
         public bool DineIn { get; set; }

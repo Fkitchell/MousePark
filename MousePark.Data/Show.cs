@@ -12,21 +12,13 @@ namespace MousePark.Data
 {
     [JsonConverter(typeof(StringEnumConverter))]
     public enum TargetAge { None, Child, Teen, Adult, All }
-    public class Show
+    public class Show : Attraction
     {
-        [Key]
-        public int ShowId { get; set; }
-        [Required]
-        public string ShowName { get; set; }
         [Required]
         public TargetAge TargetAge { get; set; }
         [Required]
         public int Capacity { get; set; }
         [Required]
         public int RunTime { get; set; }
-        [ForeignKey("Area")]
-        [Required]
-        public int AreaId { get; set; }
-        public virtual Area Area { get; set; }
     }
 }

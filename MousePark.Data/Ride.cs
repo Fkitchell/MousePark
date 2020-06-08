@@ -13,13 +13,8 @@ namespace MousePark.Data
 {
     [JsonConverter(typeof(StringEnumConverter))]
     public enum RideType {None, [Description("Roller Coaster")] RollerCoaster, Water, Gentle, Thrill, Transportation, Kiddie }
-    public class Ride
+    public class Ride : Attraction
     {
-        [Key]
-        public int RideId { get; set; }
-        [Required]
-        [Display(Name = "Name of Ride")]
-        public string RideName { get; set; }
         [Required]
         [Display(Name = "Description of Ride")]
         public string RideDescription { get; set; }
@@ -30,8 +25,5 @@ namespace MousePark.Data
         [Required]
         [Display(Name = "Type of Ride")]
         public RideType RideType { get; set; }
-        [ForeignKey("Area")]
-        public int AreaId { get; set; }
-        public virtual Area Area { get; set; }
     }
 }
