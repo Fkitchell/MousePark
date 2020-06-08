@@ -25,7 +25,8 @@ namespace MousePark.Services
                     RideDescription = model.RideDescription,
                     HeightReq = model.HeightReq,
                     RideType = model.RideType,
-                    AreaId = model.AreaId
+                    AreaId = model.AreaId,
+                    ParkId = model.ParkId
                 };
             if (ride.RideType == RideType.None)
                 return false;
