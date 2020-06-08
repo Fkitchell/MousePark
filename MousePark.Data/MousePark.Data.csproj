@@ -90,6 +90,11 @@
     <Compile Include="Area.cs" />
     <Compile Include="Eatery.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202006081417018_RideTestMigration.cs" />
+    <Compile Include="Migrations\202006081417018_RideTestMigration.designer.cs">
+      <DependentUpon>202006081417018_RideTestMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Park.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ride.cs" />
@@ -102,6 +107,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202006081417018_RideTestMigration.resx">
+      <DependentUpon>202006081417018_RideTestMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
