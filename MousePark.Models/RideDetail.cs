@@ -15,5 +15,6 @@ namespace MousePark.Models
         public RideType RideType { get; set; }
         //public int AreaId { get; set; }
         public string AreaName { get; set; }
+        public string ParkName { get; set; }
     }
 }
