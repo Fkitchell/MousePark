@@ -35,10 +35,10 @@ namespace MouseParkApi.Controllers
         }
 
         [AllowAnonymous]
-        public IHttpActionResult Get(int parkId)
+        public IHttpActionResult Get(int id)
         {
             ParkService parkService = CreateParkService();
-            var park = parkService.GetParkById(parkId);
+            var park = parkService.GetParkById(id);
             return Ok(park);
         }
 
@@ -52,10 +52,10 @@ namespace MouseParkApi.Controllers
             return Ok();
         }
 
-        public IHttpActionResult Delete(int parkId)
+        public IHttpActionResult Delete(int id)
         {
             var service = CreateParkService();
-            if (!service.DeletePark(parkId))
+            if (!service.DeletePark(id))
                 return InternalServerError();
             return Ok();
         }

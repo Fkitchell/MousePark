@@ -36,10 +36,10 @@ namespace MouseParkApi.Controllers
             return Ok();
         }
         [AllowAnonymous]
-        public IHttpActionResult Get(int areaId)
+        public IHttpActionResult Get(int id)
         {
             AreaService areaService = CreateAreaService();
-            var area = areaService.GetAreaById(areaId);
+            var area = areaService.GetAreaById(id);
             return Ok(area);
         }
         public IHttpActionResult Put(AreaEdit area)
@@ -52,11 +52,11 @@ namespace MouseParkApi.Controllers
                 return InternalServerError();
             return Ok();
         }
-        public IHttpActionResult Delete(int areaId)
+        public IHttpActionResult Delete(int id)
         {
             var service = CreateAreaService();
 
-            if (!service.DeleteArea(areaId))
+            if (!service.DeleteArea(id))
                 return InternalServerError();
             return Ok();
         }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -9,7 +11,8 @@ using System.Threading.Tasks;
 
 namespace MousePark.Data
 {
-    public enum PriceTier {Lowest = 1, MidLow, Middle, MidHigh, High}
+    [JsonConverter(typeof(StringEnumConverter))]
+    public enum PriceTier {None, Lowest, MidLow, Middle, MidHigh, High}
     public class Eatery
     {
         [Key]

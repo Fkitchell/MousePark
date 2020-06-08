@@ -3,6 +3,9 @@ using MousePark.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
+using System.Data.Entity.Core.Objects.DataClasses;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,23 +13,33 @@ namespace MousePark.Services
 {
     public class EateryService
     {
-       
+
         public bool CreateEatery(EateryCreate model)
         {
-            var food =
-                new Eatery()
-                {
-                    EateryName = model.EateryName,
-                    CuisineType = model.CuisineType,
-                    DineIn = model.DineIn,
-                    Tier = model.Tier,
-                    AreaId = model.AreaId
-                };
+            Eatery food = new Eatery
+            {
+                EateryName = model.EateryName,
+                CuisineType = model.CuisineType,
+                DineIn = model.DineIn,
+                Tier = ToEnum(model.Tier),
+                AreaId = model.AreaId
+            };
+            if (food.Tier == PriceTier.None)
+                return false;
             using (var fd = new ApplicationDbContext())
             {
                 fd.Eateries.Add(food);
                 return fd.SaveChanges() == 1;
             }
+        }
+        public PriceTier ToEnum(string priceTier)
+        {
+            PriceTier parsedPriceTier;
+            if (Enum.TryParse<PriceTier>(priceTier, true, out parsedPriceTier))
+            {
+                return parsedPriceTier;
+            }
+            return PriceTier.None;
         }
         public IEnumerable<EateryListItem> GetEateries()
         {
@@ -40,6 +53,9 @@ namespace MousePark.Services
                    {
                        EateryId = f.EateryId,
                        EateryName = f.EateryName,
+                       CuisineType = f.CuisineType,
+                       DineIn = f.DineIn,
+                       Tier = f.Tier,
                        AreaName = f.Area.AreaName
                    }
                    );

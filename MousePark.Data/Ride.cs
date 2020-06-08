@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -9,7 +11,8 @@ using System.Threading.Tasks;
 
 namespace MousePark.Data
 {
-    public enum RideType {[Description("Roller Coaster")] RollerCoaster, Water, Gentle, Thrill, Transportation, Kiddie }
+    [JsonConverter(typeof(StringEnumConverter))]
+    public enum RideType {None, [Description("Roller Coaster")] RollerCoaster, Water, Gentle, Thrill, Transportation, Kiddie }
     public class Ride
     {
         [Key]

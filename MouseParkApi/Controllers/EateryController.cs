@@ -34,10 +34,10 @@ namespace MouseParkApi.Controllers
             return Ok();
         }
         [AllowAnonymous]
-        public IHttpActionResult Get(int eateryId)
+        public IHttpActionResult Get(int id)
         {
             EateryService eateryService = CreateEateryService();
-            var food = eateryService.GetEateryById(eateryId);
+            var food = eateryService.GetEateryById(id);
             return Ok(food);
         }
         public IHttpActionResult Put(EateryEdit food)
@@ -52,11 +52,11 @@ namespace MouseParkApi.Controllers
 
             return Ok();
         }
-        public IHttpActionResult Delete(int eateryId)
+        public IHttpActionResult Delete(int id)
         {
             var service = CreateEateryService();
 
-            if (!service.DeleteEatery(eateryId))
+            if (!service.DeleteEatery(id))
                 return InternalServerError();
 
             return Ok();
