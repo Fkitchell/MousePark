@@ -103,6 +103,25 @@ namespace MousePark.Services
                 return food.ToArray();
             }
         }
+        public IEnumerable<EateryListItem> GetEateriesByPark(int parkId)
+        {
+            using (var fd = new ApplicationDbContext())
+            {
+                var food = new List<EateryListItem>();
+                foreach (var f in fd.Eateries)
+                {
+                    if (f.ParkId == parkId)
+                    {
+                        food.Add(new EateryListItem
+                        {
+                            ID = f.ID,
+                            Name = f.Name,
+                        });
+                    }
+                }
+                    return food.ToArray();
+            }
+        }
         public bool UpdateEatery(EateryEdit model)
         {
             using (var fd = new ApplicationDbContext())
