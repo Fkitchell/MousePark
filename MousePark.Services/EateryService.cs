@@ -40,7 +40,7 @@ namespace MousePark.Services
                    {
                        EateryId = f.EateryId,
                        EateryName = f.EateryName,
-                       AreaId = f.AreaId
+                       AreaName = f.Area.AreaName
                    }
                    );
                 return query.ToArray();
@@ -57,7 +57,7 @@ namespace MousePark.Services
                     {
                         EateryId = food.EateryId,
                         EateryName = food.EateryName,
-                        AreaId = food.AreaId
+                        AreaName = food.Area.AreaName
                     };
             }
         }
