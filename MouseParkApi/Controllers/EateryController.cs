@@ -40,6 +40,14 @@ namespace MouseParkApi.Controllers
             var food = eateryService.GetEateryById(id);
             return Ok(food);
         }
+        [AllowAnonymous]
+        [Route("api/Area/{AreaId}/Eatery")]
+        public IHttpActionResult GetByArea(int areaId)
+        {
+            EateryService eateryService = CreateEateryService();
+            var food = eateryService.GetEateriesByArea(areaId);
+            return Ok(food);
+        }
         public IHttpActionResult Put(EateryEdit food)
         {
             if (!ModelState.IsValid)

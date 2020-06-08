@@ -43,7 +43,7 @@ namespace MouseParkApi.Controllers
             return Ok(area);
         }
         [AllowAnonymous]
-        [Route("api/Area/{ParkId}/Park")]
+        [Route("api/Park/{ParkId}/Area")]
         public IHttpActionResult GetByPark(int parkId)
         {
             AreaService areaService = CreateAreaService();

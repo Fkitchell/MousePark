@@ -8,6 +8,7 @@ using System.Data.Entity.Core.Objects.DataClasses;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity.Core.Metadata.Edm;
 
 namespace MousePark.Services
 {
@@ -53,10 +54,10 @@ namespace MousePark.Services
                    {
                        EateryId = f.EateryId,
                        EateryName = f.EateryName,
-                       CuisineType = f.CuisineType,
-                       DineIn = f.DineIn,
-                       Tier = f.Tier,
-                       AreaName = f.Area.AreaName
+                       //CuisineType = f.CuisineType,
+                       //DineIn = f.DineIn,
+                       //Tier = f.Tier,
+                       //AreaName = f.Area.AreaName
                    }
                    );
                 return query.ToArray();
@@ -75,6 +76,30 @@ namespace MousePark.Services
                         EateryName = food.EateryName,
                         AreaName = food.Area.AreaName
                     };
+            }
+        }
+        public IEnumerable<EateryListItem> GetEateriesByArea(int areaId)
+        {
+            using (var fd = new ApplicationDbContext())
+            {
+                var food = new List<EateryListItem>();
+                foreach (var f in fd.Eateries)
+                {
+                    if (f.AreaId == areaId)
+                    {
+                        food.Add(new EateryListItem
+                        {
+                            EateryId = f.EateryId,
+                            EateryName = f.EateryName,
+                            //CuisineType = f.CuisineType,
+                            //DineIn = f.DineIn,
+                            //Tier = f.Tier,
+                            //AreaName = f.Area.AreaName
+
+                        });
+                    }
+                }
+                return food.ToArray();
             }
         }
         public bool UpdateEatery(EateryEdit model)
