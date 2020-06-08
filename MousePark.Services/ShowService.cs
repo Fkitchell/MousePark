@@ -79,8 +79,26 @@ namespace MousePark.Services
                     Capacity = show.Capacity,
                     RunTime = show.RunTime,
                     AreaName = show.Area.AreaName
-                    //AreaId = show.AreaId
                 };
+            }
+        }
+        public IEnumerable<ShowListItem> GetShowsByArea(int areaId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var items = new List<ShowListItem>();
+                foreach (var e in ctx.Shows)
+                {
+                    if (e.AreaId == areaId)
+                    {
+                        items.Add(new ShowListItem
+                        {
+                            ShowId = e.ShowId,
+                            ShowName = e.ShowName
+                        });
+                    }
+                }
+                return items.ToArray();
             }
         }
         public bool UpdateShow(ShowEdit model)

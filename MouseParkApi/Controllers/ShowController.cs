@@ -41,6 +41,13 @@ namespace MouseParkApi.Controllers
             var show = showService.GetShowById(id);
             return Ok(show);
         }
+        [Route("api/Area/{AreaId}/Show")]
+        public IHttpActionResult GetByArea(int areaId)
+        {
+            ShowService showService = CreateShowService();
+            var shows = showService.GetShowsByArea(areaId);
+            return Ok(shows);
+        }
         public IHttpActionResult Put(ShowEdit show)
         {
             if (!ModelState.IsValid)
