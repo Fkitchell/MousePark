@@ -15,11 +15,11 @@ namespace MousePark.Services
         //{
         //    _rideId = rideId;
         //}
-
+        
         public bool CreateRide(RideCreate model)
         {
-            var entity =
-                new Ride()
+            //var entity =
+                Ride ride = new Ride
                 {
                     RideName = model.RideName,
                     RideDescription = model.RideDescription,
@@ -27,11 +27,22 @@ namespace MousePark.Services
                     RideType = model.RideType,
                     AreaId = model.AreaId
                 };
+            if (ride.RideType == RideType.None)
+                return false;
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Rides.Add(entity);
+                ctx.Rides.Add(ride);
                 return ctx.SaveChanges() == 1;
             }
+        }
+        public RideType ToEnum(string rideType)
+        {
+            RideType parsedRideType;
+            if (Enum.TryParse<RideType>(rideType, true, out parsedRideType))
+            {
+                return parsedRideType;
+            }
+            return RideType.None;
         }
         public IEnumerable<RideListItem> GetRides()
         {
