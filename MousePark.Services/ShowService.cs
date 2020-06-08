@@ -17,7 +17,7 @@ namespace MousePark.Services
         {
             Show show = new Show
             {
-                ShowName = model.ShowName,
+                ShowName = model.Name,
                 TargetAge = ToEnum(model.TargetAge),
                 Capacity = model.Capacity,
                 RunTime = model.RunTime,
@@ -59,8 +59,8 @@ namespace MousePark.Services
                 var query = ctx.Shows.Select(
                     e => new ShowListItem
                     {
-                        ShowId = e.ShowId,
-                        ShowName = e.ShowName
+                        ID = e.ShowId,
+                        Name = e.ShowName
                     }
                     );
                 return query.ToArray();
@@ -73,8 +73,8 @@ namespace MousePark.Services
                 Show show = ctx.Shows.Single(e => e.ShowId == id);
                 return new ShowDetail
                 {
-                    ShowId = show.ShowId,
-                    ShowName = show.ShowName,
+                    ID = show.ShowId,
+                    Name = show.ShowName,
                     TargetAge = show.TargetAge,
                     Capacity = show.Capacity,
                     RunTime = show.RunTime,
@@ -93,8 +93,8 @@ namespace MousePark.Services
                     {
                         items.Add(new ShowListItem
                         {
-                            ShowId = e.ShowId,
-                            ShowName = e.ShowName
+                            ID = e.ShowId,
+                            Name = e.ShowName
                         });
                     }
                 }
@@ -105,9 +105,9 @@ namespace MousePark.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                Show show = ctx.Shows.Single(e => e.ShowId == model.ShowId);
+                Show show = ctx.Shows.Single(e => e.ShowId == model.ID);
 
-                show.ShowName = model.ShowName;
+                show.ShowName = model.Name;
                 show.TargetAge = model.TargetAge;
                 show.Capacity = model.Capacity;
                 show.RunTime = model.RunTime;

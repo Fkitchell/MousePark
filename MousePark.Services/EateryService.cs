@@ -19,7 +19,7 @@ namespace MousePark.Services
         {
             Eatery food = new Eatery
             {
-                EateryName = model.EateryName,
+                EateryName = model.Name,
                 CuisineType = model.CuisineType,
                 DineIn = model.DineIn,
                 Tier = ToEnum(model.Tier),
@@ -52,8 +52,8 @@ namespace MousePark.Services
                        f =>
                    new EateryListItem
                    {
-                       EateryId = f.EateryId,
-                       EateryName = f.EateryName,
+                       ID = f.EateryId,
+                       Name = f.EateryName,
                        //CuisineType = f.CuisineType,
                        //DineIn = f.DineIn,
                        //Tier = f.Tier,
@@ -72,8 +72,8 @@ namespace MousePark.Services
                 return
                     new EateryDetail
                     {
-                        EateryId = food.EateryId,
-                        EateryName = food.EateryName,
+                        ID = food.EateryId,
+                        Name = food.EateryName,
                         AreaName = food.Area.AreaName
                     };
             }
@@ -109,8 +109,8 @@ namespace MousePark.Services
                 var food =
                     fd
                     .Eateries
-                    .Single(f => f.EateryId == model.EateryId);
-                food.EateryName = model.EateryName;
+                    .Single(f => f.EateryId == model.ID);
+                food.EateryName = model.Name;
                 food.AreaId = model.AreaId;
 
                 return fd.SaveChanges() == 1;

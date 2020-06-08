@@ -15,7 +15,7 @@ namespace MousePark.Models
         [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
         [MaxLength(100, ErrorMessage = "There are too many characters in this field.")]
         [Description("Name")]
-        public string EateryName { get; set; }
+        public string Name { get; set; }
         [Required]
         [Description("Cuisine Type")]
         public string CuisineType { get; set; }

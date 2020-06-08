@@ -12,7 +12,7 @@ namespace MousePark.Models
     {
         [Required]
         [MaxLength(50, ErrorMessage = "Ride name is too long.")]
-        public string RideName { get; set; }
+        public string Name { get; set; }
         [Required]
         [MaxLength(5000)]
         public string RideDescription { get; set; }

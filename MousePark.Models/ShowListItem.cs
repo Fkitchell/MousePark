@@ -9,8 +9,8 @@ namespace MousePark.Models
 {
     public class ShowListItem
     {
-        public int ShowId { get; set; }
+        public int ID { get; set; }
         [Display(Name ="Show Name")]
-        public string ShowName { get; set; }
+        public string Name { get; set; }
     }
 }
