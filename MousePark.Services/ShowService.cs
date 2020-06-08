@@ -100,6 +100,25 @@ namespace MousePark.Services
                 return items.ToArray();
             }
         }
+        public IEnumerable<ShowListItem> GetShowsByPark(int parkId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var items = new List<ShowListItem>();
+                foreach (var e in ctx.Shows)
+                {
+                    if (e.ParkId == parkId)
+                    {
+                        items.Add(new ShowListItem
+                        {
+                            ID = e.ID,
+                            Name = e.Name
+                        });
+                    }
+                }
+                return items.ToArray();
+            }
+        }
         public bool UpdateShow(ShowEdit model)
         {
             using (var ctx = new ApplicationDbContext())
