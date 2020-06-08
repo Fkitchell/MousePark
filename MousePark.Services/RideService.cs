@@ -104,14 +104,14 @@ namespace MousePark.Services
                 return items.ToArray();
             }
         }
-        public IEnumerable<RideListItem> GetRidesByPark(int ParkId)
+        public IEnumerable<RideListItem> GetRidesByPark(int parkId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var items = new List<RideListItem>();
                 foreach (var e in ctx.Rides)
                 {
-                    if (e.ParkId == ParkId)
+                    if (e.ParkId == parkId)
                     {
                         items.Add(new RideListItem
                         {

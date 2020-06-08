@@ -7,13 +7,13 @@ namespace MousePark.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class RideTestMigration : IMigrationMetadata
+    public sealed partial class FirstMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(RideTestMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(FirstMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "202006081417018_RideTestMigration"; }
+            get { return "202006081844350_FirstMigration"; }
         }
         
         string IMigrationMetadata.Source
