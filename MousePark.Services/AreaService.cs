@@ -1,4 +1,5 @@
-﻿using MousePark.Data;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using MousePark.Data;
 using MousePark.Models;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,8 @@ namespace MousePark.Services
                 new Area()
                 {
                     AreaName = model.AreaName,
-                    ParkId = model.ParkId
+                    ParkId = model.ParkId,
+                  
                 };
             using (var loc = new ApplicationDbContext())
             {
@@ -58,7 +60,8 @@ namespace MousePark.Services
                     {
                         AreaId = location.AreaId,
                         AreaName = location.AreaName,
-                        ParkId = location.ParkId
+                       // ParkId = location.ParkId
+                          ParkName = location.Park.ParkName
                     };
             }
         }
