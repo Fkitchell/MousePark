@@ -19,7 +19,7 @@ namespace MousePark.Services
         {
             Eatery food = new Eatery
             {
-                EateryName = model.Name,
+                Name = model.Name,
                 CuisineType = model.CuisineType,
                 DineIn = model.DineIn,
                 Tier = ToEnum(model.Tier),
@@ -52,8 +52,8 @@ namespace MousePark.Services
                        f =>
                    new EateryListItem
                    {
-                       ID = f.EateryId,
-                       Name = f.EateryName,
+                       ID = f.ID,
+                       Name = f.Name,
                        //CuisineType = f.CuisineType,
                        //DineIn = f.DineIn,
                        //Tier = f.Tier,
@@ -68,12 +68,12 @@ namespace MousePark.Services
             using (var fd = new ApplicationDbContext())
             {
                 var food =
-                    fd.Eateries.Single(f => f.EateryId == id);
+                    fd.Eateries.Single(f => f.ID == id);
                 return
                     new EateryDetail
                     {
-                        ID = food.EateryId,
-                        Name = food.EateryName,
+                        ID = food.ID,
+                        Name = food.Name,
                         AreaName = food.Area.AreaName
                     };
             }
@@ -89,8 +89,8 @@ namespace MousePark.Services
                     {
                         food.Add(new EateryListItem
                         {
-                            EateryId = f.EateryId,
-                            EateryName = f.EateryName,
+                            ID = f.ID,
+                            Name = f.Name,
                             //CuisineType = f.CuisineType,
                             //DineIn = f.DineIn,
                             //Tier = f.Tier,
@@ -109,8 +109,8 @@ namespace MousePark.Services
                 var food =
                     fd
                     .Eateries
-                    .Single(f => f.EateryId == model.ID);
-                food.EateryName = model.Name;
+                    .Single(f => f.ID == model.ID);
+                food.Name = model.Name;
                 food.AreaId = model.AreaId;
 
                 return fd.SaveChanges() == 1;
@@ -123,7 +123,7 @@ namespace MousePark.Services
                 var food =
                     fd
                     .Eateries
-                    .Single(f => f.EateryId == id);
+                    .Single(f => f.ID == id);
                 fd.Eateries.Remove(food);
                 return fd.SaveChanges() == 1;
             }
