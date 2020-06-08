@@ -65,6 +65,26 @@ namespace MousePark.Services
                     };
             }
         }
+        public IEnumerable<AreaListItem> GetAreasByPark(int parkId)
+        {
+            using (var loc = new ApplicationDbContext())
+            {
+                var parks = new List<AreaListItem>();
+                foreach (var l in loc.Areas)
+                {
+                    if (l.ParkId == parkId)
+                    {
+                        parks.Add(new AreaListItem
+                        {
+                            AreaId = l.AreaId,
+                            AreaName = l.AreaName,
+                            ParkId = l.ParkId
+                        });
+                    }
+                }
+                return parks.ToArray();
+            }
+        }
         public bool UpdateArea(AreaEdit model)
         {
             using (var loc = new ApplicationDbContext())
