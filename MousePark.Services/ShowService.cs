@@ -21,7 +21,8 @@ namespace MousePark.Services
                 TargetAge = ToEnum(model.TargetAge),
                 Capacity = model.Capacity,
                 RunTime = model.RunTime,
-                AreaId = model.AreaId
+                AreaId = model.AreaId,
+                ParkId = model.ParkId
             };
             if (show.TargetAge == TargetAge.None)
                 return false;
@@ -77,7 +78,8 @@ namespace MousePark.Services
                     TargetAge = show.TargetAge,
                     Capacity = show.Capacity,
                     RunTime = show.RunTime,
-                    AreaName = show.Area.AreaName
+                    AreaName = show.Area.AreaName,
+                    ParkName = show.Park.ParkName
                 };
             }
         }
@@ -130,6 +132,7 @@ namespace MousePark.Services
                 show.Capacity = model.Capacity;
                 show.RunTime = model.RunTime;
                 show.AreaId = model.AreaId;
+                show.ParkId = model.ParkId;
 
                 return ctx.SaveChanges() == 1;
             }

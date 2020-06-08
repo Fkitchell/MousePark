@@ -17,5 +17,6 @@ namespace MousePark.Models
         public int RunTime { get; set; }
         [Required]
         public int AreaId { get; set; }
+        public int ParkId { get; set; }
     }
 }
