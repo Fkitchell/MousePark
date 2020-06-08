@@ -21,7 +21,7 @@ namespace MousePark.Services
             //var entity =
                 Ride ride = new Ride
                 {
-                    RideName = model.Name,
+                    Name = model.Name,
                     RideDescription = model.RideDescription,
                     HeightReq = model.HeightReq,
                     RideType = model.RideType,
@@ -55,8 +55,8 @@ namespace MousePark.Services
                         e =>
                         new RideListItem
                         {
-                            ID = e.RideId,
-                            Name = e.RideName,
+                            ID = e.ID,
+                            Name = e.Name,
                             RideType = e.RideType,
                         }
                     );
@@ -70,11 +70,11 @@ namespace MousePark.Services
                 var entity =
                     ctx
                     .Rides
-                    .Single(e => e.RideId == id);
+                    .Single(e => e.ID == id);
                     return
                     new RideDetail
                     {
-                        Name = entity.RideName,
+                        Name = entity.Name,
                         RideDescription = entity.RideDescription,
                         HeightReq = entity.HeightReq,
                         RideType = entity.RideType,
@@ -94,8 +94,28 @@ namespace MousePark.Services
                     {
                         items.Add(new RideListItem
                         {
-                            ID = e.RideId,
-                            Name = e.RideName,
+                            ID = e.ID,
+                            Name = e.Name,
+                            RideType = e.RideType
+                        });
+                    }
+                }
+                return items.ToArray();
+            }
+        }
+        public IEnumerable<RideListItem> GetRidesByPark(int ParkId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var items = new List<RideListItem>();
+                foreach (var e in ctx.Rides)
+                {
+                    if (e.ParkId == ParkId)
+                    {
+                        items.Add(new RideListItem
+                        {
+                            ID = e.ID,
+                            Name = e.Name,
                             RideType = e.RideType
                         });
                     }
@@ -110,9 +130,9 @@ namespace MousePark.Services
                 var entity =
                     ctx
                     .Rides
-                    .Single(e => e.RideId == model.ID);
+                    .Single(e => e.ID == model.ID);
 
-                entity.RideName = model.Name;
+                entity.Name = model.Name;
                 entity.RideDescription = model.RideDescription;
                 entity.HeightReq = model.HeightReq;
                 entity.RideType = model.RideType;
@@ -129,7 +149,7 @@ namespace MousePark.Services
                 var entity =
                     ctx
                     .Rides
-                    .Single(e => e.RideId == RideId);
+                    .Single(e => e.ID == RideId);
 
                 ctx.Rides.Remove(entity);
 
