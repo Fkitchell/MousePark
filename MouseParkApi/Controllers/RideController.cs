@@ -52,6 +52,14 @@ namespace MouseParkApi.Controllers
             var rides = rideService.GetRidesByArea(areaId);
             return Ok(rides);
         }
+        [AllowAnonymous]
+        [Route("api/Park/{ParkId}/Ride")]
+        public IHttpActionResult GetByPark(int ParkId)
+        {
+            RideService rideService = CreateRideService();
+            var rides = rideService.GetRidesByPark(ParkId);
+            return Ok(rides);
+        }
         public IHttpActionResult Put(RideEdit ride)
         {
             if (!ModelState.IsValid)
