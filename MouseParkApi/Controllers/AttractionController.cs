@@ -29,7 +29,7 @@ namespace MouseParkApi.Controllers
             return Ok(attractions);
         }
 
-        [Route("api/Area/{ParkId}/Attraction")]
+        [Route("api/Area/{AreaId}/Attraction")]
         public IHttpActionResult GetAttractionsByArea(int areaId)
         {
             AttractionService attractionService = CreateAttractionService();
