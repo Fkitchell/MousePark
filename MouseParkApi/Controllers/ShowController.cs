@@ -41,6 +41,7 @@ namespace MouseParkApi.Controllers
             var show = showService.GetShowById(id);
             return Ok(show);
         }
+        [AllowAnonymous]
         [Route("api/Area/{AreaId}/Show")]
         public IHttpActionResult GetByArea(int areaId)
         {
