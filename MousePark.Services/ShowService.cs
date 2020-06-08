@@ -17,7 +17,7 @@ namespace MousePark.Services
         {
             Show show = new Show
             {
-                ShowName = model.Name,
+                Name = model.Name,
                 TargetAge = ToEnum(model.TargetAge),
                 Capacity = model.Capacity,
                 RunTime = model.RunTime,
@@ -33,8 +33,7 @@ namespace MousePark.Services
         }
         public TargetAge ToEnum(string targetAge)
         {
-            TargetAge parsedTargetAge;
-            if (Enum.TryParse<TargetAge>(targetAge, true, out parsedTargetAge))
+            if (Enum.TryParse(targetAge, true, out TargetAge parsedTargetAge))
             {
                 return parsedTargetAge;
             }
@@ -59,8 +58,8 @@ namespace MousePark.Services
                 var query = ctx.Shows.Select(
                     e => new ShowListItem
                     {
-                        ID = e.ShowId,
-                        Name = e.ShowName
+                        ID = e.ID,
+                        Name = e.Name
                     }
                     );
                 return query.ToArray();
@@ -70,11 +69,11 @@ namespace MousePark.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                Show show = ctx.Shows.Single(e => e.ShowId == id);
+                Show show = ctx.Shows.Single(e => e.ID  == id);
                 return new ShowDetail
                 {
-                    ID = show.ShowId,
-                    Name = show.ShowName,
+                    ID = show.ID,
+                    Name = show.Name,
                     TargetAge = show.TargetAge,
                     Capacity = show.Capacity,
                     RunTime = show.RunTime,
@@ -93,8 +92,8 @@ namespace MousePark.Services
                     {
                         items.Add(new ShowListItem
                         {
-                            ID = e.ShowId,
-                            Name = e.ShowName
+                            ID = e.ID,
+                            Name = e.Name
                         });
                     }
                 }
@@ -105,9 +104,9 @@ namespace MousePark.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                Show show = ctx.Shows.Single(e => e.ShowId == model.ID);
+                Show show = ctx.Shows.Single(e => e.ID == model.ID);
 
-                show.ShowName = model.Name;
+                show.Name = model.Name;
                 show.TargetAge = model.TargetAge;
                 show.Capacity = model.Capacity;
                 show.RunTime = model.RunTime;
@@ -120,7 +119,7 @@ namespace MousePark.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                Show show = ctx.Shows.Single(e => e.ShowId == showId);
+                Show show = ctx.Shows.Single(e => e.ID == showId);
                 ctx.Shows.Remove(show);
 
                 return ctx.SaveChanges() == 1;
