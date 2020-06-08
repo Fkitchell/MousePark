@@ -17,6 +17,6 @@ namespace MousePark.Models
         public bool DineIn { get; set; }
         [Description("Price Tier")]
         public PriceTier Tier { get; set; }
-        public int AreaId { get; set; }
+        public string AreaName { get; set; }
     }
 }
