@@ -18,5 +18,6 @@ namespace MousePark.Models
         [Description("Price Tier")]
         public PriceTier Tier { get; set; }
         public string AreaName { get; set; }
+        public string ParkName { get; set; }
     }
 }

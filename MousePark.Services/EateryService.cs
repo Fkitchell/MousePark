@@ -74,7 +74,8 @@ namespace MousePark.Services
                     {
                         ID = food.ID,
                         Name = food.Name,
-                        AreaName = food.Area.AreaName
+                        AreaName = food.Area.AreaName,
+                        ParkName = food.Park.ParkName
                     };
             }
         }
