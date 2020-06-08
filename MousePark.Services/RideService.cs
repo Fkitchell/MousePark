@@ -82,6 +82,26 @@ namespace MousePark.Services
                     };
             }
         }
+        public IEnumerable<RideListItem> GetRidesByArea(int areaId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var items = new List<RideListItem>();
+                foreach (var e in ctx.Rides)
+                {
+                    if (e.AreaId == areaId)
+                    {
+                        items.Add(new RideListItem
+                        {
+                            RideId = e.RideId,
+                            RideName = e.RideName,
+                            RideType = e.RideType
+                        });
+                    }
+                }
+                return items.ToArray();
+            }
+        }
         public bool UpdateRide(RideEdit model)
         {
             using (var ctx = new ApplicationDbContext())
