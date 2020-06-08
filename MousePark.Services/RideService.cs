@@ -79,7 +79,8 @@ namespace MousePark.Services
                         HeightReq = entity.HeightReq,
                         RideType = entity.RideType,
                         //AreaId = entity.AreaId
-                        AreaName = entity.Area.AreaName
+                        AreaName = entity.Area.AreaName,
+                        ParkName = entity.Park.ParkName
                     };
             }
         }
