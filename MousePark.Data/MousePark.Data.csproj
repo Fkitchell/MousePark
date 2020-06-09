@@ -91,9 +91,9 @@
     <Compile Include="Attraction.cs" />
     <Compile Include="Eatery.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202006081844350_FirstMigration.cs" />
-    <Compile Include="Migrations\202006081844350_FirstMigration.designer.cs">
-      <DependentUpon>202006081844350_FirstMigration.cs</DependentUpon>
+    <Compile Include="Migrations\202006082112247_June8Migration.cs" />
+    <Compile Include="Migrations\202006082112247_June8Migration.designer.cs">
+      <DependentUpon>202006082112247_June8Migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Park.cs" />
@@ -110,8 +110,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202006081844350_FirstMigration.resx">
-      <DependentUpon>202006081844350_FirstMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006082112247_June8Migration.resx">
+      <DependentUpon>202006082112247_June8Migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
