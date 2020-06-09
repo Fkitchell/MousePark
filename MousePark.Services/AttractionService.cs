@@ -22,7 +22,7 @@ namespace MousePark.Services
                         AttractionType = AttractionType.Show,
                         ID = e.ID,
                         Name = e.Name,
-                        ParkName = e.Park.ParkName,
+                        ParkName = e.Area.Park.ParkName,
                         AreaName = e.Area.AreaName
                     });
                 }
@@ -33,7 +33,7 @@ namespace MousePark.Services
                         AttractionType = AttractionType.Ride,
                         ID = e.ID,
                         Name = e.Name,
-                        ParkName = e.Park.ParkName,
+                        ParkName = e.Area.Park.ParkName,
                         AreaName = e.Area.AreaName
                     });
                 }
@@ -44,7 +44,7 @@ namespace MousePark.Services
                         AttractionType = AttractionType.Eatery,
                         ID = e.ID,
                         Name = e.Name,
-                        ParkName = e.Park.ParkName,
+                        ParkName = e.Area.Park.ParkName,
                         AreaName = e.Area.AreaName
                     });
                 }
@@ -102,7 +102,7 @@ namespace MousePark.Services
                 List<AttractionListItem> items = new List<AttractionListItem>();
                 foreach (var e in ctx.Shows)
                 {
-                    if (e.AreaId == parkId)
+                    if (e.Area.ParkId == parkId)
                     {
                         items.Add(new AttractionListItem
                         {
@@ -114,7 +114,7 @@ namespace MousePark.Services
                 }
                 foreach (var e in ctx.Rides)
                 {
-                    if (e.AreaId == parkId)
+                    if (e.Area.ParkId == parkId)
                     {
                         items.Add(new AttractionListItem
                         {
@@ -126,7 +126,7 @@ namespace MousePark.Services
                 }
                 foreach (var e in ctx.Eateries)
                 {
-                    if (e.AreaId == parkId)
+                    if (e.Area.ParkId == parkId)
                     {
                         items.Add(new AttractionListItem
                         {
