@@ -18,28 +18,18 @@ namespace MousePark.Services
             Show show = new Show
             {
                 Name = model.Name,
-                TargetAge = ToEnum(model.TargetAge),
+                TargetAge = model.TargetAge,
                 Capacity = model.Capacity,
                 RunTime = model.RunTime,
                 AreaId = model.AreaId,
-               // ParkId = model.ParkId
-            };
-            if (show.TargetAge == TargetAge.None)
-                return false;
+              
+            };           
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Shows.Add(show);
                 return ctx.SaveChanges() == 1;
             }
-        }
-        public TargetAge ToEnum(string targetAge)
-        {
-            if (Enum.TryParse(targetAge, true, out TargetAge parsedTargetAge))
-            {
-                return parsedTargetAge;
-            }
-            return TargetAge.None;
-        }
+        }       
         public IEnumerable<ShowListItem> GetShows()
         {
             using (var ctx = new ApplicationDbContext())
@@ -132,7 +122,7 @@ namespace MousePark.Services
                 show.Capacity = model.Capacity;
                 show.RunTime = model.RunTime;
                 show.AreaId = model.AreaId;
-                //show.ParkId = model.ParkId;
+                
 
                 return ctx.SaveChanges() == 1;
             }

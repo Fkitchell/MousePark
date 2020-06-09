@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace MousePark.Data
 {
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum RideType {None, [Description("Roller Coaster")] RollerCoaster, Water, Gentle, Thrill, Transportation, Kiddie }
+    public enum RideType {[Description("Roller Coaster")] RollerCoaster=1, Water, Gentle, Thrill, Transportation, Kiddie }
     public class Ride : Attraction
     {
         [Required]

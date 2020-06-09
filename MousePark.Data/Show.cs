@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace MousePark.Data
 {
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum TargetAge { None, Child, Teen, Adult, All }
+    public enum TargetAge { Child = 1, Teen, Adult, All }
     public class Show : Attraction
     {
         [Required]

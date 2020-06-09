@@ -15,36 +15,25 @@ namespace MousePark.Services
         //{
         //    _rideId = rideId;
         //}
-        
+
         public bool CreateRide(RideCreate model)
         {
             //var entity =
-                Ride ride = new Ride
-                {
-                    Name = model.Name,
-                    RideDescription = model.RideDescription,
-                    HeightReq = model.HeightReq,
-                    RideType = model.RideType,
-                    AreaId = model.AreaId,
-                   // ParkId = model.ParkId
-                };
-            if (ride.RideType == RideType.None)
-                return false;
+            Ride ride = new Ride
+            {
+                Name = model.Name,
+                RideDescription = model.RideDescription,
+                HeightReq = model.HeightReq,
+                RideType = model.RideType,
+                AreaId = model.AreaId,
+            };
+           
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Rides.Add(ride);
                 return ctx.SaveChanges() == 1;
             }
-        }
-        public RideType ToEnum(string rideType)
-        {
-            RideType parsedRideType;
-            if (Enum.TryParse<RideType>(rideType, true, out parsedRideType))
-            {
-                return parsedRideType;
-            }
-            return RideType.None;
-        }
+        }       
         public IEnumerable<RideListItem> GetRides()
         {
             using (var ctx = new ApplicationDbContext())
@@ -72,17 +61,17 @@ namespace MousePark.Services
                     ctx
                     .Rides
                     .Single(e => e.ID == id);
-                    return
-                    new RideDetail
-                    {
-                        Name = entity.Name,
-                        RideDescription = entity.RideDescription,
-                        HeightReq = entity.HeightReq,
-                        RideType = entity.RideType,
+                return
+                new RideDetail
+                {
+                    Name = entity.Name,
+                    RideDescription = entity.RideDescription,
+                    HeightReq = entity.HeightReq,
+                    RideType = entity.RideType,
                         //AreaId = entity.AreaId
                         AreaName = entity.Area.AreaName,
-                        ParkName = entity.Area.Park.ParkName
-                    };
+                    ParkName = entity.Area.Park.ParkName
+                };
             }
         }
         public IEnumerable<RideListItem> GetRidesByArea(int areaId)
