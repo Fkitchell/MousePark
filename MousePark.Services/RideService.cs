@@ -110,7 +110,7 @@ namespace MousePark.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var items = new List<RideListItem>();
-                foreach (var e in ctx.Rides)
+                foreach (var e in ctx.Rides.ToList())
                 {
                     if (e.Area.ParkId == parkId)
                     {

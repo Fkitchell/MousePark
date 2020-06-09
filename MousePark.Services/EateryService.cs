@@ -108,7 +108,7 @@ namespace MousePark.Services
             using (var fd = new ApplicationDbContext())
             {
                 var food = new List<EateryListItem>();
-                foreach (var f in fd.Eateries)
+                foreach (var f in fd.Eateries.ToList())
                 {
                     if (f.Area.ParkId == parkId)
                     {
