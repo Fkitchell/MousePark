@@ -22,7 +22,7 @@ namespace MousePark.Services
                         AttractionType = AttractionType.Show,
                         ID = e.ID,
                         Name = e.Name,
-                        ParkName = e.Park.ParkName,
+                        ParkName = e.Area.Park.ParkName,
                         AreaName = e.Area.AreaName
                     });
                 }
@@ -33,7 +33,7 @@ namespace MousePark.Services
                         AttractionType = AttractionType.Ride,
                         ID = e.ID,
                         Name = e.Name,
-                        ParkName = e.Park.ParkName,
+                        ParkName = e.Area.Park.ParkName,
                         AreaName = e.Area.AreaName
                     });
                 }
@@ -44,7 +44,7 @@ namespace MousePark.Services
                         AttractionType = AttractionType.Eatery,
                         ID = e.ID,
                         Name = e.Name,
-                        ParkName = e.Park.ParkName,
+                        ParkName = e.Area.Park.ParkName,
                         AreaName = e.Area.AreaName
                     });
                 }

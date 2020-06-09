@@ -57,7 +57,9 @@ namespace MousePark.Services
                        //CuisineType = f.CuisineType,
                        //DineIn = f.DineIn,
                        //Tier = f.Tier,
-                       //AreaName = f.Area.AreaName
+                       //Interesting that below two lines work, but not in Geat EateriesByAreaId
+                       //AreaName = f.Area.AreaName,
+                       //ParkName = f.Area.Park.ParkName
                    }
                    );
                 return query.ToArray();
@@ -74,6 +76,9 @@ namespace MousePark.Services
                     {
                         ID = food.ID,
                         Name = food.Name,
+                        CuisineType = food.CuisineType,
+                        DineIn = food.DineIn,
+                        Tier = food.Tier,
                         AreaName = food.Area.AreaName,
                         ParkName = food.Area.Park.ParkName
                     };
@@ -95,9 +100,10 @@ namespace MousePark.Services
                             //CuisineType = f.CuisineType,
                             //DineIn = f.DineIn,
                             //Tier = f.Tier,
-                            //AreaName = f.Area.AreaName
-
-                        });
+                            //AreaName = f.Area.AreaName,
+                            //ParkName = f.Area.Park.ParkName
+                        }
+                        );
                     }
                 }
                 return food.ToArray();
@@ -119,7 +125,7 @@ namespace MousePark.Services
                         });
                     }
                 }
-                    return food.ToArray();
+                return food.ToArray();
             }
         }
         public bool UpdateEatery(EateryEdit model)
@@ -131,6 +137,9 @@ namespace MousePark.Services
                     .Eateries
                     .Single(f => f.ID == model.ID);
                 food.Name = model.Name;
+                food.CuisineType = model.CuisineType;
+                food.DineIn = model.DineIn;
+                food.Tier = model.Tier;
                 food.AreaId = model.AreaId;
 
                 return fd.SaveChanges() == 1;
