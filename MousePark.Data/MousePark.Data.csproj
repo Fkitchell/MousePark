@@ -95,6 +95,10 @@
     <Compile Include="Migrations\202006082112247_June8Migration.designer.cs">
       <DependentUpon>202006082112247_June8Migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006091425486_RemoveParkIdFromCreateMethods.cs" />
+    <Compile Include="Migrations\202006091425486_RemoveParkIdFromCreateMethods.designer.cs">
+      <DependentUpon>202006091425486_RemoveParkIdFromCreateMethods.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Park.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -112,6 +116,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202006082112247_June8Migration.resx">
       <DependentUpon>202006082112247_June8Migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006091425486_RemoveParkIdFromCreateMethods.resx">
+      <DependentUpon>202006091425486_RemoveParkIdFromCreateMethods.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

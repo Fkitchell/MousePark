@@ -75,7 +75,7 @@ namespace MousePark.Services
                         ID = food.ID,
                         Name = food.Name,
                         AreaName = food.Area.AreaName,
-                        ParkName = food.Park.ParkName
+                        ParkName = food.Area.Park.ParkName
                     };
             }
         }
@@ -110,7 +110,7 @@ namespace MousePark.Services
                 var food = new List<EateryListItem>();
                 foreach (var f in fd.Eateries)
                 {
-                    if (f.ParkId == parkId)
+                    if (f.Area.ParkId == parkId)
                     {
                         food.Add(new EateryListItem
                         {

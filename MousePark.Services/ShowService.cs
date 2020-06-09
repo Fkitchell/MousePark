@@ -22,7 +22,7 @@ namespace MousePark.Services
                 Capacity = model.Capacity,
                 RunTime = model.RunTime,
                 AreaId = model.AreaId,
-                ParkId = model.ParkId
+               // ParkId = model.ParkId
             };
             if (show.TargetAge == TargetAge.None)
                 return false;
@@ -79,7 +79,7 @@ namespace MousePark.Services
                     Capacity = show.Capacity,
                     RunTime = show.RunTime,
                     AreaName = show.Area.AreaName,
-                    ParkName = show.Park.ParkName
+                    ParkName = show.Area.Park.ParkName
                 };
             }
         }
@@ -109,7 +109,7 @@ namespace MousePark.Services
                 var items = new List<ShowListItem>();
                 foreach (var e in ctx.Shows)
                 {
-                    if (e.ParkId == parkId)
+                    if (e.Area.ParkId == parkId)
                     {
                         items.Add(new ShowListItem
                         {
@@ -132,7 +132,7 @@ namespace MousePark.Services
                 show.Capacity = model.Capacity;
                 show.RunTime = model.RunTime;
                 show.AreaId = model.AreaId;
-                show.ParkId = model.ParkId;
+                //show.ParkId = model.ParkId;
 
                 return ctx.SaveChanges() == 1;
             }

@@ -13,7 +13,7 @@ namespace MousePark.Models
         public int ID { get; set; }
         public string Name { get; set; }
         public string AreaName { get; set; }
-      
+        public string ParkName { get; set; }     
 
     }
 }

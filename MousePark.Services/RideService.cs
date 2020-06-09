@@ -26,7 +26,7 @@ namespace MousePark.Services
                     HeightReq = model.HeightReq,
                     RideType = model.RideType,
                     AreaId = model.AreaId,
-                    ParkId = model.ParkId
+                   // ParkId = model.ParkId
                 };
             if (ride.RideType == RideType.None)
                 return false;
@@ -81,7 +81,7 @@ namespace MousePark.Services
                         RideType = entity.RideType,
                         //AreaId = entity.AreaId
                         AreaName = entity.Area.AreaName,
-                        ParkName = entity.Park.ParkName
+                        ParkName = entity.Area.Park.ParkName
                     };
             }
         }
@@ -112,7 +112,7 @@ namespace MousePark.Services
                 var items = new List<RideListItem>();
                 foreach (var e in ctx.Rides)
                 {
-                    if (e.ParkId == parkId)
+                    if (e.Area.ParkId == parkId)
                     {
                         items.Add(new RideListItem
                         {
