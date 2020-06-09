@@ -100,7 +100,7 @@ namespace MousePark.Services
             using (var ctx = new ApplicationDbContext())
             {
                 List<AttractionListItem> items = new List<AttractionListItem>();
-                foreach (var e in ctx.Shows)
+                foreach (var e in ctx.Shows.ToList())
                 {
                     if (e.Area.ParkId == parkId)
                     {
@@ -112,7 +112,7 @@ namespace MousePark.Services
                         });
                     }
                 }
-                foreach (var e in ctx.Rides)
+                foreach (var e in ctx.Rides.ToList())
                 {
                     if (e.Area.ParkId == parkId)
                     {
@@ -124,7 +124,7 @@ namespace MousePark.Services
                         });
                     }
                 }
-                foreach (var e in ctx.Eateries)
+                foreach (var e in ctx.Eateries.ToList())
                 {
                     if (e.Area.ParkId == parkId)
                     {
