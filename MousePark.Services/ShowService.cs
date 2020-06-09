@@ -21,8 +21,7 @@ namespace MousePark.Services
                 TargetAge = model.TargetAge,
                 Capacity = model.Capacity,
                 RunTime = model.RunTime,
-                AreaId = model.AreaId,
-              
+                AreaId = model.AreaId,              
             };           
             using (var ctx = new ApplicationDbContext())
             {
