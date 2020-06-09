@@ -22,26 +22,16 @@ namespace MousePark.Services
                 Name = model.Name,
                 CuisineType = model.CuisineType,
                 DineIn = model.DineIn,
-                Tier = ToEnum(model.Tier),
+                Tier = model.Tier,
                 AreaId = model.AreaId
             };
-            if (food.Tier == PriceTier.None)
-                return false;
+          
             using (var fd = new ApplicationDbContext())
             {
                 fd.Eateries.Add(food);
                 return fd.SaveChanges() == 1;
             }
-        }
-        public PriceTier ToEnum(string priceTier)
-        {
-            PriceTier parsedPriceTier;
-            if (Enum.TryParse<PriceTier>(priceTier, true, out parsedPriceTier))
-            {
-                return parsedPriceTier;
-            }
-            return PriceTier.None;
-        }
+        }       
         public IEnumerable<EateryListItem> GetEateries()
         {
             using (var fd = new ApplicationDbContext())

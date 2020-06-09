@@ -12,9 +12,9 @@ using System.Threading.Tasks;
 namespace MousePark.Data
 {
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum PriceTier {None, Lowest, MidLow, Middle, MidHigh, High}
+    public enum PriceTier { Low = 1, MidLow, Middle, MidHigh, High }
     public class Eatery : Attraction
-    {      
+    {
         [Required]
         public string CuisineType { get; set; }
         [Required]
