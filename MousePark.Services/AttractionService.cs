@@ -15,7 +15,7 @@ namespace MousePark.Services
             using (var ctx = new ApplicationDbContext())
             {
                 List<AttractionListAll> items = new List<AttractionListAll>();
-                foreach (var e in ctx.Shows)
+                foreach (var e in ctx.Shows.ToList())
                 {
                     items.Add(new AttractionListAll
                     {
@@ -26,7 +26,7 @@ namespace MousePark.Services
                         AreaName = e.Area.AreaName
                     });
                 }
-                foreach (var e in ctx.Rides)
+                foreach (var e in ctx.Rides.ToList())
                 {
                     items.Add(new AttractionListAll
                     {
@@ -37,7 +37,7 @@ namespace MousePark.Services
                         AreaName = e.Area.AreaName
                     });
                 }
-                foreach (var e in ctx.Eateries)
+                foreach (var e in ctx.Eateries.ToList())
                 {
                     items.Add(new AttractionListAll
                     {
@@ -102,7 +102,7 @@ namespace MousePark.Services
                 List<AttractionListItem> items = new List<AttractionListItem>();
                 foreach (var e in ctx.Shows)
                 {
-                    if (e.AreaId == parkId)
+                    if (e.Area.ParkId == parkId)
                     {
                         items.Add(new AttractionListItem
                         {
@@ -114,7 +114,7 @@ namespace MousePark.Services
                 }
                 foreach (var e in ctx.Rides)
                 {
-                    if (e.AreaId == parkId)
+                    if (e.Area.ParkId == parkId)
                     {
                         items.Add(new AttractionListItem
                         {
@@ -126,7 +126,7 @@ namespace MousePark.Services
                 }
                 foreach (var e in ctx.Eateries)
                 {
-                    if (e.AreaId == parkId)
+                    if (e.Area.ParkId == parkId)
                     {
                         items.Add(new AttractionListItem
                         {
