@@ -15,10 +15,10 @@ namespace MousePark.Data
         [Required]
         public string Name { get; set; }
 
-        [ForeignKey("Park")]
-        [Required]
-        public int ParkId { get; set; }
-        public virtual Park Park { get; set; }
+        //[ForeignKey("Park")]
+        //[Required]
+        //public int ParkId { get; set; }
+        //public virtual Park Park { get; set; }
 
         [ForeignKey("Area")]
         [Required]
