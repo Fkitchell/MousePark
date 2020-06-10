@@ -120,8 +120,7 @@ namespace MousePark.Services
                 show.TargetAge = model.TargetAge;
                 show.Capacity = model.Capacity;
                 show.RunTime = model.RunTime;
-                show.AreaId = model.AreaId;
-                
+                show.AreaId = model.AreaId;                
 
                 return ctx.SaveChanges() == 1;
             }

@@ -14,5 +14,6 @@ namespace MousePark.Models
         public string Name { get; set; }
         //public string AreaName { get; set; }
         //public string ParkName { get; set; }
+        public double AverageScore { get; set; }
     }
 }

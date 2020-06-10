@@ -132,6 +132,7 @@
     <Compile Include="EateryService.cs" />
     <Compile Include="ParkService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RatingService.cs" />
     <Compile Include="RideService.cs" />
     <Compile Include="ShowService.cs" />
   </ItemGroup>

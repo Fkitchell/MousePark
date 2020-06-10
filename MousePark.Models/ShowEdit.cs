@@ -14,7 +14,6 @@ namespace MousePark.Models
         public TargetAge TargetAge { get; set; }
         public int Capacity { get; set; }
         public int RunTime { get; set; }
-        public int AreaId { get; set; }
-      
+        public int AreaId { get; set; }      
     }
 }

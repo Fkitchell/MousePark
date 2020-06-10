@@ -25,13 +25,34 @@ namespace MousePark.Services
                 Tier = model.Tier,
                 AreaId = model.AreaId
             };
-          
+
             using (var fd = new ApplicationDbContext())
             {
                 fd.Eateries.Add(food);
                 return fd.SaveChanges() == 1;
             }
-        }       
+        }
+        public double CalculateAverageScore(int ID)
+        {
+            double totalScore = 0;
+            double totalCount = 0;
+            //List<Rating> EateryRating = new List<Rating>;
+            using (var e = new ApplicationDbContext())
+            {
+                foreach (Rating r in e.Ratings)
+                {
+                    if (r.ID == ID)
+                    {
+                        totalScore += r.Score;
+                        totalCount++;
+                    }
+                }
+            }
+            if (totalCount == 0)
+                return 0;
+            return totalScore / totalCount;
+
+        }
         public IEnumerable<EateryListItem> GetEateries()
         {
             using (var fd = new ApplicationDbContext())
@@ -50,6 +71,8 @@ namespace MousePark.Services
                        //Interesting that below two lines work, but not in Geat EateriesByAreaId
                        //AreaName = f.Area.AreaName,
                        //ParkName = f.Area.Park.ParkName
+                       AverageScore = CalculateAverageScore(f.ID)
+
                    }
                    );
                 return query.ToArray();
@@ -70,7 +93,9 @@ namespace MousePark.Services
                         DineIn = food.DineIn,
                         Tier = food.Tier,
                         AreaName = food.Area.AreaName,
-                        ParkName = food.Area.Park.ParkName
+                        ParkName = food.Area.Park.ParkName,
+                        AverageScore = food.AverageScore
+
                     };
             }
         }
