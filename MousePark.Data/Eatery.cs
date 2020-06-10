@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,5 +24,7 @@ namespace MousePark.Data
         [Required]
         [Description("Price Tier")]
         public PriceTier Tier { get; set; }
+        public double AverageScore { get; set; }
     }
 }
+
