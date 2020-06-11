@@ -9,6 +9,6 @@ namespace MousePark.Models
     public class RatingCreate
     {
         public int Score { get; set; }
-        public int ID { get; set; }
+        public int EateryId { get; set; }
     }
 }

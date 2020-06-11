@@ -111,6 +111,18 @@
     <Compile Include="Migrations\202006101901391_RatingAddition3.designer.cs">
       <DependentUpon>202006101901391_RatingAddition3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006111453242_AddICollectionToEatery.cs" />
+    <Compile Include="Migrations\202006111453242_AddICollectionToEatery.designer.cs">
+      <DependentUpon>202006111453242_AddICollectionToEatery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006111525278_AddICollectionToEatery2.cs" />
+    <Compile Include="Migrations\202006111525278_AddICollectionToEatery2.designer.cs">
+      <DependentUpon>202006111525278_AddICollectionToEatery2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006111539469_RemoveRequiredFromRatingId.cs" />
+    <Compile Include="Migrations\202006111539469_RemoveRequiredFromRatingId.designer.cs">
+      <DependentUpon>202006111539469_RemoveRequiredFromRatingId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Park.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -141,6 +153,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006101901391_RatingAddition3.resx">
       <DependentUpon>202006101901391_RatingAddition3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006111453242_AddICollectionToEatery.resx">
+      <DependentUpon>202006111453242_AddICollectionToEatery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006111525278_AddICollectionToEatery2.resx">
+      <DependentUpon>202006111525278_AddICollectionToEatery2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006111539469_RemoveRequiredFromRatingId.resx">
+      <DependentUpon>202006111539469_RemoveRequiredFromRatingId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

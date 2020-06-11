@@ -10,15 +10,16 @@ namespace MousePark.Data
 {
     public class Rating
     {
-        [Required]
+        [Key]
         public int RatingId { get; set; }
-        [Range (1,5, ErrorMessage = "Value must be between 1 & 5.")]
+        [Range(1, 5, ErrorMessage = "Value must be between 1 & 5.")]
         [Required]
         public int Score { get; set; }
         //public string Comment { get; set; }
 
 
-        public int ID { get; set; }
+        [ForeignKey("Eatery")]
+        public int EateryId { get; set; }
         public virtual Eatery Eatery { get; set; }
     }
 }

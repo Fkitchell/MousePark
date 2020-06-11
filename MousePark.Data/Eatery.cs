@@ -24,7 +24,21 @@ namespace MousePark.Data
         [Required]
         [Description("Price Tier")]
         public PriceTier Tier { get; set; }
-        public double AverageScore { get; set; }
+        public double AverageScore
+        {
+            get
+            {
+                if (Ratings.Count == 0)
+                {
+                    return 0;
+                }
+                return Ratings.Select(r => r.Score).Average();
+            }
+
+        }
+        public virtual ICollection<Rating> Ratings { get; set; }
+
+
     }
 }
 
