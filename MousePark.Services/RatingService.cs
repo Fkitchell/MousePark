@@ -15,7 +15,7 @@ namespace MousePark.Services
             Rating rating = new Rating
             {
                 Score = model.Score,
-                ID = model.ID,
+                EateryId = model.EateryId,
             };
             using (var e = new ApplicationDbContext())
             {
