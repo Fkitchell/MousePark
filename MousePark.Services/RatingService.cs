@@ -16,6 +16,8 @@ namespace MousePark.Services
             {
                 Score = model.Score,
                 EateryId = model.EateryId,
+                RideId = model.RideId,
+                ShowId = model.ShowId,
             };
             using (var e = new ApplicationDbContext())
             {
