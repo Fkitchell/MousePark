@@ -87,12 +87,7 @@ namespace MousePark.Services
                         food.Add(new EateryListItem
                         {
                             ID = f.ID,
-                            Name = f.Name,
-                            //CuisineType = f.CuisineType,
-                            //DineIn = f.DineIn,
-                            //Tier = f.Tier,
-                            //AreaName = f.Area.AreaName,
-                            //ParkName = f.Area.Park.ParkName
+                            Name = f.Name,                            
                         }
                         );
                     }

@@ -34,11 +34,8 @@ namespace MousePark.Data
                 }
                 return Ratings.Select(r => r.Score).Average();
             }
-
         }
         public virtual ICollection<Rating> Ratings { get; set; }
-
-
     }
 }
 

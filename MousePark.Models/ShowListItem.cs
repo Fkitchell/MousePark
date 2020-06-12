@@ -12,5 +12,6 @@ namespace MousePark.Models
         public int ID { get; set; }
         [Display(Name ="Show Name")]
         public string Name { get; set; }
+        public double AverageScore { get; set; }
     }
 }
