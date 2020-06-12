@@ -27,31 +27,35 @@ namespace MousePark.Services
                 RideType = model.RideType,
                 AreaId = model.AreaId,
             };
-           
+
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Rides.Add(ride);
                 return ctx.SaveChanges() == 1;
             }
-        }       
+        }
         public IEnumerable<RideListItem> GetRides()
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
-                    ctx
-                    .Rides
-                    .Select(
-                        e =>
-                        new RideListItem
-                        {
-                            ID = e.ID,
-                            Name = e.Name,
-                            RideType = e.RideType,
-                        }
-                    );
-                return query.ToArray();
+                    ctx.Rides
+                    .ToList();
+                List<RideListItem> Result = new List<RideListItem>();
+                foreach (Ride e in query)
+                {
+                    RideListItem ride = new RideListItem
+                    {
+                        ID = e.ID,
+                        Name = e.Name,
+                        AverageScore = e.AverageScore
+                    };
+                    Result.Add(ride);
+                }
+                return Result;
             }
+
+
         }
         public RideDetail GetRideByID(int id)
         {
@@ -68,9 +72,9 @@ namespace MousePark.Services
                     RideDescription = entity.RideDescription,
                     HeightReq = entity.HeightReq,
                     RideType = entity.RideType,
-                        //AreaId = entity.AreaId
-                        AreaName = entity.Area.AreaName,
-                    ParkName = entity.Area.Park.ParkName
+                    AreaName = entity.Area.AreaName,
+                    ParkName = entity.Area.Park.ParkName,
+                    AverageScore = entity.AverageScore
                 };
             }
         }
@@ -87,8 +91,9 @@ namespace MousePark.Services
                         {
                             ID = e.ID,
                             Name = e.Name,
-                            RideType = e.RideType
-                        });
+                            //RideType = e.RideType
+                        }
+                        );
                     }
                 }
                 return items.ToArray();
@@ -107,7 +112,7 @@ namespace MousePark.Services
                         {
                             ID = e.ID,
                             Name = e.Name,
-                            RideType = e.RideType
+                            //RideType = e.RideType
                         });
                     }
                 }

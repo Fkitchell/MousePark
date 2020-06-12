@@ -123,6 +123,14 @@
     <Compile Include="Migrations\202006111539469_RemoveRequiredFromRatingId.designer.cs">
       <DependentUpon>202006111539469_RemoveRequiredFromRatingId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006121602159_AddFKRideShowToRatingMoveAverageScoreToAttraction.cs" />
+    <Compile Include="Migrations\202006121602159_AddFKRideShowToRatingMoveAverageScoreToAttraction.designer.cs">
+      <DependentUpon>202006121602159_AddFKRideShowToRatingMoveAverageScoreToAttraction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006121736254_AddFKRideShowToRatingMoveAverageScoreBackToEateryRideShow.cs" />
+    <Compile Include="Migrations\202006121736254_AddFKRideShowToRatingMoveAverageScoreBackToEateryRideShow.designer.cs">
+      <DependentUpon>202006121736254_AddFKRideShowToRatingMoveAverageScoreBackToEateryRideShow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Park.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -162,6 +170,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006111539469_RemoveRequiredFromRatingId.resx">
       <DependentUpon>202006111539469_RemoveRequiredFromRatingId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006121602159_AddFKRideShowToRatingMoveAverageScoreToAttraction.resx">
+      <DependentUpon>202006121602159_AddFKRideShowToRatingMoveAverageScoreToAttraction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006121736254_AddFKRideShowToRatingMoveAverageScoreBackToEateryRideShow.resx">
+      <DependentUpon>202006121736254_AddFKRideShowToRatingMoveAverageScoreBackToEateryRideShow.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
