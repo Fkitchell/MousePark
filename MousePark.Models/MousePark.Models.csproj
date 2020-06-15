@@ -75,6 +75,9 @@
     <Compile Include="ParkListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RatingCreate.cs" />
+    <Compile Include="RatingDetail.cs" />
+    <Compile Include="RatingEdit.cs" />
+    <Compile Include="RatingListItem.cs" />
     <Compile Include="RideCreate.cs" />
     <Compile Include="RideDetail.cs" />
     <Compile Include="RideEdit.cs" />

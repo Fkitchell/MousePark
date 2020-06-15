@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace MousePark.Models
 {
-    public class RatingCreate
+    public class RatingEdit
     {
+        public int RatingId { get; set; }
         public int Score { get; set; }
         public int? EateryId { get; set; }
         public int? RideId { get; set; }

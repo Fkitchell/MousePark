@@ -54,8 +54,6 @@ namespace MousePark.Services
                 }
                 return Result;
             }
-
-
         }
         public RideDetail GetRideByID(int id)
         {
