@@ -32,7 +32,7 @@ namespace MousePark.Data
                 {
                     return 0;
                 }
-                return Ratings.Select(r => r.Score).Average();
+                return Math.Round((Ratings.Select(r => r.Score).Average()), 1);
             }
         }
         public virtual ICollection<Rating> Ratings { get; set; }
