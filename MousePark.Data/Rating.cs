@@ -14,8 +14,10 @@ namespace MousePark.Data
         public int RatingId { get; set; }
         [Range(1, 5, ErrorMessage = "Value must be between 1 & 5.")]
         [Required]
-        public int Score { get; set; }  
-        
+        public int Score { get; set; }
+        [Required]
+        public Guid UserId { get; set; }
+
         [ForeignKey("Ride")]
         public int? RideId { get; set; }
         public virtual Ride Ride { get; set; }

@@ -131,6 +131,10 @@
     <Compile Include="Migrations\202006121736254_AddFKRideShowToRatingMoveAverageScoreBackToEateryRideShow.designer.cs">
       <DependentUpon>202006121736254_AddFKRideShowToRatingMoveAverageScoreBackToEateryRideShow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006151424119_UpdateRatingToIncludeUserId.cs" />
+    <Compile Include="Migrations\202006151424119_UpdateRatingToIncludeUserId.designer.cs">
+      <DependentUpon>202006151424119_UpdateRatingToIncludeUserId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Park.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -176,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006121736254_AddFKRideShowToRatingMoveAverageScoreBackToEateryRideShow.resx">
       <DependentUpon>202006121736254_AddFKRideShowToRatingMoveAverageScoreBackToEateryRideShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006151424119_UpdateRatingToIncludeUserId.resx">
+      <DependentUpon>202006151424119_UpdateRatingToIncludeUserId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
