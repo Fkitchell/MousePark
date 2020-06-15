@@ -14,6 +14,7 @@ namespace MousePark.Services
         {
             Rating rating = new Rating
             {
+                UserId = model.UserId,
                 Score = model.Score,
                 EateryId = model.EateryId,
                 RideId = model.RideId,
