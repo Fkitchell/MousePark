@@ -1,4 +1,5 @@
-﻿using MousePark.Models;
+﻿using Microsoft.AspNet.Identity;
+using MousePark.Models;
 using MousePark.Services;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,8 @@ namespace MouseParkApi.Controllers
     {
         private RatingService CreateRatingService()
         {
-            var ratingService = new RatingService();
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var ratingService = new RatingService(userId);
             return ratingService;
         }
         public IHttpActionResult Post(RatingCreate rating)
@@ -26,6 +28,49 @@ namespace MouseParkApi.Controllers
                 return InternalServerError();
             return Ok();
         }
+        [AllowAnonymous]
+        public IHttpActionResult Get()
+        {
+            RatingService ratingService = CreateRatingService();
+            var ratings = ratingService.GetRatings();
+            return Ok(ratings);
+        }
+        [AllowAnonymous]
+        [Route("api/Account/{RatingId}")]
+        public IHttpActionResult GetRatingsByUser()
+        {
+            RatingService ratingService = CreateRatingService();
+            var ratings = ratingService.GetRatingsByUser();
+            return Ok(ratings);
+        }
+        [AllowAnonymous]
+        [Route("api/Ratings/{RatingId}/User")]
+        public IHttpActionResult GetRatingByIdByUser(int id)
+        {
+            RatingService ratingService = CreateRatingService();
+            var ratings = ratingService.GetRatingByIdByUser(id);
+            return Ok(ratings);
+        }
+        public IHttpActionResult Put(RatingEdit rating)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
+            RatingService service = CreateRatingService();
+
+            if (!service.UpdateRating(rating))
+                return InternalServerError();
+
+            return Ok();
+        }
+        public IHttpActionResult Delete(int id)
+        {
+            RatingService service = CreateRatingService();
+
+            if (!service.DeleteRating(id))
+                return InternalServerError();
+
+            return Ok();
+        }
     }
 }
