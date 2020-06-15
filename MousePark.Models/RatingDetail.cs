@@ -10,6 +10,7 @@ namespace MousePark.Models
     {
         public int RatingId { get; set; }
         public int Score { get; set; }
+        public Guid UserId { get; set; }
         public int? EateryId { get; set; }
         public int? RideId { get; set; }
         public int? ShowId { get; set; }

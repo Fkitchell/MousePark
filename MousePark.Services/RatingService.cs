@@ -31,30 +31,30 @@ namespace MousePark.Services
                 return e.SaveChanges() == 1;
             }
         }
-        public IEnumerable<RatingListItem> GetRatings()
-        {
-            using (var rtg = new ApplicationDbContext())
-            {
-                var query =
-                    rtg.Ratings
-                    .ToList();
-                List<RatingListItem> Result = new List<RatingListItem>();
-                foreach (Rating r in query)
-                {
-                    RatingListItem rating = new RatingListItem
-                    {
-                        RatingId = r.RatingId,
-                        Score = r.Score,
-                        EateryId = r.EateryId,
-                        RideId = r.RideId,
-                        ShowId = r.ShowId,
-                        UserId = r.UserId,
-                    };
-                    Result.Add(rating);
-                }
-                return Result;
-            }
-        }
+        //public IEnumerable<RatingListItem> GetRatings()
+        //{
+        //    using (var rtg = new ApplicationDbContext())
+        //    {
+        //        var query =
+        //            rtg.Ratings
+        //            .ToList();
+        //        List<RatingListItem> Result = new List<RatingListItem>();
+        //        foreach (Rating r in query)
+        //        {
+        //            RatingListItem rating = new RatingListItem
+        //            {
+        //                RatingId = r.RatingId,
+        //                Score = r.Score,
+        //                UserId = r.UserId,
+        //                EateryId = r.EateryId,
+        //                RideId = r.RideId,
+        //                ShowId = r.ShowId,
+        //            };
+        //            Result.Add(rating);
+        //        }
+        //        return Result;
+        //    }
+        //}
         public IEnumerable<RatingListItem> GetRatingsByUser()
         {
             using (var rtg = new ApplicationDbContext())
