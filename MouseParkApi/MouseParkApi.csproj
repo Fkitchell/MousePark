@@ -213,13 +213,19 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AreaController.cs" />
+    <Compile Include="Controllers\AreaCreateController.cs" />
     <Compile Include="Controllers\AttractionController.cs" />
     <Compile Include="Controllers\EateryController.cs" />
+    <Compile Include="Controllers\EateryCreateController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ParkViewController.cs" />
     <Compile Include="Controllers\RatingController.cs" />
+    <Compile Include="Controllers\RatingCreateController.cs" />
     <Compile Include="Controllers\RideController.cs" />
     <Compile Include="Controllers\ParkController.cs" />
+    <Compile Include="Controllers\RideCreateController.cs" />
     <Compile Include="Controllers\ShowController.cs" />
+    <Compile Include="Controllers\ShowCreateController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -389,6 +395,12 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\ParkView\Create.cshtml" />
+    <Content Include="Views\EateryCreate\Create.cshtml" />
+    <Content Include="Views\RideCreate\Create.cshtml" />
+    <Content Include="Views\AreaCreate\Create.cshtml" />
+    <Content Include="Views\RatingCreate\Create.cshtml" />
+    <Content Include="Views\ShowCreate\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
