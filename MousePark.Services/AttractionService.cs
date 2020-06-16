@@ -22,8 +22,10 @@ namespace MousePark.Services
                         AttractionType = AttractionType.Show,
                         ID = e.ID,
                         Name = e.Name,
+                        AverageScore = e.AverageScore,
                         ParkName = e.Area.Park.ParkName,
-                        AreaName = e.Area.AreaName
+                        AreaName = e.Area.AreaName,
+
                     });
                 }
                 foreach (var e in ctx.Rides.ToList())
@@ -33,8 +35,9 @@ namespace MousePark.Services
                         AttractionType = AttractionType.Ride,
                         ID = e.ID,
                         Name = e.Name,
+                        AverageScore = e.AverageScore,
                         ParkName = e.Area.Park.ParkName,
-                        AreaName = e.Area.AreaName
+                        AreaName = e.Area.AreaName,
                     });
                 }
                 foreach (var e in ctx.Eateries.ToList())
@@ -44,8 +47,9 @@ namespace MousePark.Services
                         AttractionType = AttractionType.Eatery,
                         ID = e.ID,
                         Name = e.Name,
+                        AverageScore = e.AverageScore,
                         ParkName = e.Area.Park.ParkName,
-                        AreaName = e.Area.AreaName
+                        AreaName = e.Area.AreaName,
                     });
                 }
                 return items.ToArray();
@@ -56,7 +60,7 @@ namespace MousePark.Services
             using (var ctx = new ApplicationDbContext())
             {
                 List<AttractionListItem> items = new List<AttractionListItem>();
-                foreach (var e in ctx.Shows)
+                foreach (var e in ctx.Shows.ToList())
                 {
                     if (e.AreaId == areaId)
                     {
@@ -64,11 +68,12 @@ namespace MousePark.Services
                         {
                             AttractionType = AttractionType.Show,
                             ID = e.ID,
-                            Name = e.Name
+                            Name = e.Name,
+                            AverageScore = e.AverageScore,
                         });
                     }
                 }
-                foreach (var e in ctx.Rides)
+                foreach (var e in ctx.Rides.ToList())
                 {
                     if (e.AreaId == areaId)
                     {
@@ -77,10 +82,11 @@ namespace MousePark.Services
                             AttractionType = AttractionType.Ride,
                             ID = e.ID,
                             Name = e.Name,
+                            AverageScore = e.AverageScore,
                         });
                     }
                 }
-                foreach (var e in ctx.Eateries)
+                foreach (var e in ctx.Eateries.ToList())
                 {
                     if (e.AreaId == areaId)
                     {
@@ -88,7 +94,8 @@ namespace MousePark.Services
                         {
                             AttractionType = AttractionType.Eatery,
                             ID = e.ID,
-                            Name = e.Name
+                            Name = e.Name,
+                            AverageScore = e.AverageScore,
                         });
                     }
                 }
@@ -108,7 +115,8 @@ namespace MousePark.Services
                         {
                             AttractionType = AttractionType.Show,
                             ID = e.ID,
-                            Name = e.Name
+                            Name = e.Name,
+                            AverageScore = e.AverageScore,
                         });
                     }
                 }
@@ -121,6 +129,7 @@ namespace MousePark.Services
                             AttractionType = AttractionType.Ride,
                             ID = e.ID,
                             Name = e.Name,
+                            AverageScore = e.AverageScore,
                         });
                     }
                 }
@@ -132,7 +141,8 @@ namespace MousePark.Services
                         {
                             AttractionType = AttractionType.Eatery,
                             ID = e.ID,
-                            Name = e.Name
+                            Name = e.Name,
+                            AverageScore = e.AverageScore,
                         });
                     }
                 }
