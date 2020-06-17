@@ -1,0 +1,40 @@
+﻿@model IEnumerable<MousePark.Models.AreaListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AreaId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AreaName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ParkId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AreaId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AreaName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ParkId)
+        </td>
+    </tr>
+}
+
+</table>

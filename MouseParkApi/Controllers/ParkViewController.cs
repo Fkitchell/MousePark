@@ -1,5 +1,6 @@
 ﻿using MousePark.Data;
 using MousePark.Models;
+using MousePark.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,15 @@ namespace MouseParkApi.Controllers
     public class ParkViewController : Controller
     {
         // GET: ParkView
+        private ParkService GetParkService()
+        {
+            var service = new ParkService();
+            return service;
+        }
         public ActionResult Index()
         {
-            return View();
+            var service = GetParkService();
+            return View(service.GetParks());
         }
         [HttpGet]
         public ActionResult Create()

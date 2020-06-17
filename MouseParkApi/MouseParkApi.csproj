@@ -401,6 +401,20 @@
     <Content Include="Views\AreaCreate\Create.cshtml" />
     <Content Include="Views\RatingCreate\Create.cshtml" />
     <Content Include="Views\ShowCreate\Create.cshtml" />
+    <Content Include="Views\RideCreate\Edit.cshtml" />
+    <Content Include="Views\RideCreate\Index.cshtml" />
+    <Content Include="Views\RideCreate\Delete.cshtml" />
+    <Content Include="Views\RideCreate\Details.cshtml" />
+    <Content Include="Views\EateryCreate\Index.cshtml" />
+    <Content Include="Views\EateryCreate\Details.cshtml" />
+    <Content Include="Views\EateryCreate\Delete.cshtml" />
+    <Content Include="Views\AreaCreate\Index.cshtml" />
+    <Content Include="Views\ShowCreate\Index.cshtml" />
+    <Content Include="Views\ShowCreate\Details.cshtml" />
+    <Content Include="Views\ShowCreate\Delete.cshtml" />
+    <Content Include="Views\ParkView\Index.cshtml" />
+    <Content Include="Views\ShowCreate\Edit.cshtml" />
+    <Content Include="Views\EateryCreate\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

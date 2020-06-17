@@ -1,0 +1,66 @@
+﻿@model MousePark.Models.RideDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RideDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RideDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RideDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HeightReq)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HeightReq)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AreaName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AreaName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ParkName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ParkName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AverageScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AverageScore)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
