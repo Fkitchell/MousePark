@@ -36,7 +36,6 @@ namespace MouseParkApi.Controllers
         //    return Ok(ratings);
         //}
         [AllowAnonymous]
-        [Route("api/Account")]
         public IHttpActionResult GetRatingsByUser()
         {
             RatingService ratingService = CreateRatingService();
