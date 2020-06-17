@@ -1,6 +1,6 @@
 ## MousePark
 
-This repository contains a Web API that tracks and manages theme parks and their attractions. Admins can create and manage existing attractions. Users can view attractions and rate them on a 5-star scale. This was built as a group project submission for Eleven Fifty Academy's Software Development course and can be run locally on your computer..
+This repository contains a Web API that tracks and manages theme parks and their attractions. Admins can create and manage existing attractions. Guests can view attractions and rate them on a 5-star scale. This was built as a group project submission for Eleven Fifty Academy's Software Development course and can be run locally on your computer..
 
 #### Prerequisites
 To run this program, you will need:
@@ -13,8 +13,7 @@ To run this program, you will need:
 - Run debugger. The API hyperlink at the top of the page will show you all available actions and test requirements.
 - Open Postman to run tests. You'll need to Register and get a token to run certain tests.
   -	Admin can Post/Put/Delete objects in database.
-  -	Registered users can view and rate existing objects (Post Rating)
-  -	Guests/unregistered users can Get lists and details of existing objects.
+  -	Guests/unregistered users can Get lists and details of existing objects, as well as create and manage Ratings for each object.
 #### Bug Fix  
 If upon running you receive an error “Cannot insert the value NULL into column ‘RatingId’”, you will need to make a small change to the Rating Table:  
 - Open the SQL Server Object Explorer 
