@@ -25,5 +25,17 @@ namespace MousePark.Data
         [Required]
         [Display(Name = "Type of Ride")]
         public RideType RideType { get; set; }
+        public double AverageScore
+        {
+            get
+            {
+                if (Ratings.Count == 0)
+                {
+                    return 0;
+                }
+                return Math.Round((Ratings.Select(r => r.Score).Average()), 1);
+            }
+        }
+        public virtual ICollection<Rating> Ratings { get; set; }
     }
 }

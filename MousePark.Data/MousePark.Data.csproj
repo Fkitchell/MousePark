@@ -99,9 +99,50 @@
     <Compile Include="Migrations\202006091425486_RemoveParkIdFromCreateMethods.designer.cs">
       <DependentUpon>202006091425486_RemoveParkIdFromCreateMethods.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006101836376_RatingAddition.cs" />
+    <Compile Include="Migrations\202006101836376_RatingAddition.designer.cs">
+      <DependentUpon>202006101836376_RatingAddition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006101856170_RatingAddition2.cs" />
+    <Compile Include="Migrations\202006101856170_RatingAddition2.designer.cs">
+      <DependentUpon>202006101856170_RatingAddition2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006101901391_RatingAddition3.cs" />
+    <Compile Include="Migrations\202006101901391_RatingAddition3.designer.cs">
+      <DependentUpon>202006101901391_RatingAddition3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006111453242_AddICollectionToEatery.cs" />
+    <Compile Include="Migrations\202006111453242_AddICollectionToEatery.designer.cs">
+      <DependentUpon>202006111453242_AddICollectionToEatery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006111525278_AddICollectionToEatery2.cs" />
+    <Compile Include="Migrations\202006111525278_AddICollectionToEatery2.designer.cs">
+      <DependentUpon>202006111525278_AddICollectionToEatery2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006111539469_RemoveRequiredFromRatingId.cs" />
+    <Compile Include="Migrations\202006111539469_RemoveRequiredFromRatingId.designer.cs">
+      <DependentUpon>202006111539469_RemoveRequiredFromRatingId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006121602159_AddFKRideShowToRatingMoveAverageScoreToAttraction.cs" />
+    <Compile Include="Migrations\202006121602159_AddFKRideShowToRatingMoveAverageScoreToAttraction.designer.cs">
+      <DependentUpon>202006121602159_AddFKRideShowToRatingMoveAverageScoreToAttraction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006121736254_AddFKRideShowToRatingMoveAverageScoreBackToEateryRideShow.cs" />
+    <Compile Include="Migrations\202006121736254_AddFKRideShowToRatingMoveAverageScoreBackToEateryRideShow.designer.cs">
+      <DependentUpon>202006121736254_AddFKRideShowToRatingMoveAverageScoreBackToEateryRideShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006151424119_UpdateRatingToIncludeUserId.cs" />
+    <Compile Include="Migrations\202006151424119_UpdateRatingToIncludeUserId.designer.cs">
+      <DependentUpon>202006151424119_UpdateRatingToIncludeUserId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006151935538_RatingGuidTweaks.cs" />
+    <Compile Include="Migrations\202006151935538_RatingGuidTweaks.designer.cs">
+      <DependentUpon>202006151935538_RatingGuidTweaks.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Park.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rating.cs" />
     <Compile Include="Ride.cs" />
     <Compile Include="Show.cs" />
   </ItemGroup>
@@ -119,6 +160,36 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006091425486_RemoveParkIdFromCreateMethods.resx">
       <DependentUpon>202006091425486_RemoveParkIdFromCreateMethods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006101836376_RatingAddition.resx">
+      <DependentUpon>202006101836376_RatingAddition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006101856170_RatingAddition2.resx">
+      <DependentUpon>202006101856170_RatingAddition2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006101901391_RatingAddition3.resx">
+      <DependentUpon>202006101901391_RatingAddition3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006111453242_AddICollectionToEatery.resx">
+      <DependentUpon>202006111453242_AddICollectionToEatery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006111525278_AddICollectionToEatery2.resx">
+      <DependentUpon>202006111525278_AddICollectionToEatery2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006111539469_RemoveRequiredFromRatingId.resx">
+      <DependentUpon>202006111539469_RemoveRequiredFromRatingId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006121602159_AddFKRideShowToRatingMoveAverageScoreToAttraction.resx">
+      <DependentUpon>202006121602159_AddFKRideShowToRatingMoveAverageScoreToAttraction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006121736254_AddFKRideShowToRatingMoveAverageScoreBackToEateryRideShow.resx">
+      <DependentUpon>202006121736254_AddFKRideShowToRatingMoveAverageScoreBackToEateryRideShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006151424119_UpdateRatingToIncludeUserId.resx">
+      <DependentUpon>202006151424119_UpdateRatingToIncludeUserId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006151935538_RatingGuidTweaks.resx">
+      <DependentUpon>202006151935538_RatingGuidTweaks.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

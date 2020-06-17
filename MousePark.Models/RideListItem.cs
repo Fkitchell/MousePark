@@ -11,6 +11,7 @@ namespace MousePark.Models
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public RideType RideType { get; set; }
+       // public RideType RideType { get; set; }
+        public double AverageScore { get; set; }
     }
 }

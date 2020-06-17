@@ -25,34 +25,33 @@ namespace MousePark.Services
                 Tier = model.Tier,
                 AreaId = model.AreaId
             };
-          
+
             using (var fd = new ApplicationDbContext())
             {
                 fd.Eateries.Add(food);
                 return fd.SaveChanges() == 1;
             }
-        }       
+        }
+       
         public IEnumerable<EateryListItem> GetEateries()
         {
             using (var fd = new ApplicationDbContext())
             {
                 var query =
                    fd.Eateries
-                   .Select(
-                       f =>
-                   new EateryListItem
-                   {
-                       ID = f.ID,
-                       Name = f.Name,
-                       //CuisineType = f.CuisineType,
-                       //DineIn = f.DineIn,
-                       //Tier = f.Tier,
-                       //Interesting that below two lines work, but not in Geat EateriesByAreaId
-                       //AreaName = f.Area.AreaName,
-                       //ParkName = f.Area.Park.ParkName
-                   }
-                   );
-                return query.ToArray();
+                   .ToList();
+                List<EateryListItem> Result = new List<EateryListItem>();
+                foreach (Eatery f in query)
+                {
+                    EateryListItem food = new EateryListItem
+                    {
+                        ID = f.ID,
+                        Name = f.Name,
+                        AverageScore = f.AverageScore
+                    };
+                    Result.Add(food);
+                }
+                return Result;
             }
         }
         public EateryDetail GetEateryById(int id)
@@ -70,7 +69,9 @@ namespace MousePark.Services
                         DineIn = food.DineIn,
                         Tier = food.Tier,
                         AreaName = food.Area.AreaName,
-                        ParkName = food.Area.Park.ParkName
+                        ParkName = food.Area.Park.ParkName,
+                        AverageScore = food.AverageScore
+
                     };
             }
         }
@@ -86,12 +87,7 @@ namespace MousePark.Services
                         food.Add(new EateryListItem
                         {
                             ID = f.ID,
-                            Name = f.Name,
-                            //CuisineType = f.CuisineType,
-                            //DineIn = f.DineIn,
-                            //Tier = f.Tier,
-                            //AreaName = f.Area.AreaName,
-                            //ParkName = f.Area.Park.ParkName
+                            Name = f.Name,                            
                         }
                         );
                     }

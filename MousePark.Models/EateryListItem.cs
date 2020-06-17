@@ -11,8 +11,7 @@ namespace MousePark.Models
     public class EateryListItem
     {
         public int ID { get; set; }
-        public string Name { get; set; }
-        //public string AreaName { get; set; }
-        //public string ParkName { get; set; }
+        public string Name { get; set; }        
+        public double AverageScore { get; set; }
     }
 }

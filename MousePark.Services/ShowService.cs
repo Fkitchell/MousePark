@@ -21,45 +21,40 @@ namespace MousePark.Services
                 TargetAge = model.TargetAge,
                 Capacity = model.Capacity,
                 RunTime = model.RunTime,
-                AreaId = model.AreaId,              
-            };           
+                AreaId = model.AreaId,
+            };
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Shows.Add(show);
                 return ctx.SaveChanges() == 1;
             }
-        }       
+        }
         public IEnumerable<ShowListItem> GetShows()
         {
             using (var ctx = new ApplicationDbContext())
             {
-                List<ShowListItem> items = new List<ShowListItem>();
-                //foreach (var e in ctx.Shows)
-                //{
-                //    items.Add(new ShowListItem
-                //    {
-                //        ShowId = e.ShowId,
-                //        ShowName = e.ShowName     
-                //    });
-                //}
-                //return items.ToArray();
-                //Below is simply shorthand for above.
-
-                var query = ctx.Shows.Select(
-                    e => new ShowListItem
+                var query =
+                    ctx.Shows
+                    .ToList();
+                List<ShowListItem> Result = new List<ShowListItem>();
+                foreach (Show e in query)
+                {
+                    ShowListItem show = new ShowListItem
                     {
                         ID = e.ID,
-                        Name = e.Name
-                    }
-                    );
-                return query.ToArray();
+                        Name = e.Name,
+                        AverageScore = e.AverageScore
+                    };
+                    Result.Add(show);
+                }
+                return Result;
             }
         }
         public ShowDetail GetShowById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
-                Show show = ctx.Shows.Single(e => e.ID  == id);
+                Show show = ctx.Shows.Single(e => e.ID == id);
                 return new ShowDetail
                 {
                     ID = show.ID,
@@ -68,7 +63,8 @@ namespace MousePark.Services
                     Capacity = show.Capacity,
                     RunTime = show.RunTime,
                     AreaName = show.Area.AreaName,
-                    ParkName = show.Area.Park.ParkName
+                    ParkName = show.Area.Park.ParkName,
+                    AverageScore = show.AverageScore
                 };
             }
         }
@@ -121,7 +117,6 @@ namespace MousePark.Services
                 show.Capacity = model.Capacity;
                 show.RunTime = model.RunTime;
                 show.AreaId = model.AreaId;
-                
 
                 return ctx.SaveChanges() == 1;
             }

@@ -19,5 +19,6 @@ namespace MousePark.Models
         public PriceTier Tier { get; set; }
         public string AreaName { get; set; }
         public string ParkName { get; set; }
+        public double AverageScore { get; set; }
     }
 }

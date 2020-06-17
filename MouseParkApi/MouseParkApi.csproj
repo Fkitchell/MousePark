@@ -216,10 +216,10 @@
     <Compile Include="Controllers\AttractionController.cs" />
     <Compile Include="Controllers\EateryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RatingController.cs" />
     <Compile Include="Controllers\RideController.cs" />
     <Compile Include="Controllers\ParkController.cs" />
     <Compile Include="Controllers\ShowController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

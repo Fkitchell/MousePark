@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MousePark.Data
 {
@@ -14,12 +11,7 @@ namespace MousePark.Data
         public int ID { get; set; }
         [Required]
         public string Name { get; set; }
-
-        //[ForeignKey("Park")]
-        //[Required]
-        //public int ParkId { get; set; }
-        //public virtual Park Park { get; set; }
-
+       
         [ForeignKey("Area")]
         [Required]
         public int AreaId { get; set; }
