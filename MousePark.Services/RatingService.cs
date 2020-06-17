@@ -45,7 +45,7 @@ namespace MousePark.Services
                     {
                         RatingId = r.RatingId,
                         Score = r.Score,
-                        UserId = r.UserId,
+                        //UserId = r.UserId,
                         EateryId = r.EateryId,
                         RideId = r.RideId,
                         ShowId = r.ShowId,
@@ -68,7 +68,7 @@ namespace MousePark.Services
                         {
                             RatingId = r.RatingId,
                             Score = r.Score,
-                            UserId = r.UserId,
+                            //UserId = r.UserId,
                             EateryId = r.EateryId,
                             RideId = r.RideId,
                             ShowId = r.ShowId,
@@ -76,26 +76,7 @@ namespace MousePark.Services
                         );
                 return query.ToArray();
             }
-        }
-        public RatingDetail GetRatingByIdByUser(int id)
-        {
-            using (var rtg = new ApplicationDbContext())
-            {
-                var entity =
-                    rtg
-                        .Ratings
-                        .Single(r => r.RatingId == id && r.UserId == _userId);
-                return
-                    new RatingDetail
-                    {
-                        RatingId = entity.RatingId,
-                        Score = entity.Score,
-                        EateryId = entity.EateryId,
-                        RideId = entity.RideId,
-                        ShowId = entity.ShowId
-                    };
-            }
-        }
+        }       
         public bool UpdateRating(RatingEdit model)
         {
             using (var rtg = new ApplicationDbContext())
