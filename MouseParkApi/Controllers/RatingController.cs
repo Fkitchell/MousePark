@@ -28,29 +28,21 @@ namespace MouseParkApi.Controllers
                 return InternalServerError();
             return Ok();
         }
+        //[AllowAnonymous]
+        //public IHttpActionResult Get()
+        //{
+        //    RatingService ratingService = CreateRatingService();
+        //    var ratings = ratingService.GetRatings();
+        //    return Ok(ratings);
+        //}
         [AllowAnonymous]
-        public IHttpActionResult Get()
-        {
-            RatingService ratingService = CreateRatingService();
-            var ratings = ratingService.GetRatings();
-            return Ok(ratings);
-        }
-        [AllowAnonymous]
-        [Route("api/Account/{RatingId}")]
+        [Route("api/Account")]
         public IHttpActionResult GetRatingsByUser()
         {
             RatingService ratingService = CreateRatingService();
             var ratings = ratingService.GetRatingsByUser();
             return Ok(ratings);
-        }
-        [AllowAnonymous]
-        [Route("api/Rating/{RatingId}")]
-        public IHttpActionResult GetRatingByIdByUser(int id)
-        {
-            RatingService ratingService = CreateRatingService();
-            var ratings = ratingService.GetRatingByIdByUser(id);
-            return Ok(ratings);
-        }
+        }       
         public IHttpActionResult Put(RatingEdit rating)
         {
             if (!ModelState.IsValid)
