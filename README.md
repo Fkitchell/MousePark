@@ -10,6 +10,7 @@ To run this program, you will need:
 
 #### Running the Program
 - Clone to your local repository and open in VS Community.
+- Open Package Manager Console. Select MousePark.Data as the default project and run "update-database" in the command line to seed the database.
 - Run debugger. The API hyperlink at the top of the page will show you all available actions and test requirements.
 - Open Postman to run tests. You'll need to Register and get a token to run certain tests.
   -	Admin can Post/Put/Delete objects in database.
