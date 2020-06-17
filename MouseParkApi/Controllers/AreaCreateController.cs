@@ -1,4 +1,5 @@
 ﻿using MousePark.Models;
+using MousePark.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,22 @@ namespace MouseParkApi.Controllers
     public class AreaCreateController : Controller
     {
         // GET: ParkView
+        private AreaService GetAreaService()
+        {
+            var service = new AreaService();
+            return service;
+        }
         public ActionResult Index()
         {
-            return View();
+            var service = GetAreaService();
+            return View(service.GetAreas());
+        }
+        public ActionResult Details(int id)
+        {
+            var svc = GetAreaService();
+            var model = svc.GetAreaById(id);
+
+            return View(model);
         }
         [HttpGet]
         public ActionResult Create()
@@ -26,6 +40,12 @@ namespace MouseParkApi.Controllers
             ac.Post(ca);
             return View();
         }
+        public ActionResult Delete(int id)
+        {
+            var svc = GetAreaService();
+            var model = svc.GetAreaById(id);
 
+            return View(model);
+        }
     }
 }

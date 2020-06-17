@@ -1,0 +1,66 @@
+﻿@model MousePark.Models.EateryDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EateryDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CuisineType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CuisineType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DineIn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DineIn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AreaName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AreaName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ParkName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ParkName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AverageScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AverageScore)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
